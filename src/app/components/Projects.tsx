@@ -63,7 +63,7 @@ const All = () => {
       whileInView={{ x: 0, opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 1.5 }}
-      className="grid lg:grid-cols-2 grid-cols-1 gap-8 max-w-[1200px] mx-auto  mt-[3rem]  "
+      className="grid lg:grid-cols-2 grid-cols-1 gap-8 max-w-[1200px] mx-auto w-[95%]  mt-[3rem]  "
     >
       {projects.map((project) => (
         <div key={project.id} className=" mt-10   ">
@@ -71,19 +71,19 @@ const All = () => {
             <div className="w-[100%] hover:border hover:border-blue-700 hover:p-4">
               <Image
                 src={project.image}
-                className=" h-[20rem] w-full shadow aspect-square"
+                className="  w-full shadow aspect-[1/0.6]"
                 alt={project.title}
               />
             </div>
-            <div className="flex flex-row py-8  flex-wrap items-center gap-2 ">
+          
+          </Link>
+          <div className="flex flex-row py-8 w-full  flex-wrap items-center gap-2 ">
               {project.technologies.map((tech, index) => (
-                <div key ={index} className="border w-fit py-3 px-5  rounded-full">
-                  <span className="text-base ">{tech}</span>
+                <div key ={index} className="border   py-3 px-5  rounded-full">
+                  <span className="text-base">{tech}</span>
                 </div>
               ))}
             </div>
-          </Link>
-
            <h2 className="text-xl font-semibold">{project.title}</h2>
           {/* <p>{project.description}</p>  */}
         </div>

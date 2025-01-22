@@ -13,7 +13,7 @@ const Resume = ({ theme }) => {
       id="Resume"
       className=" "
     >
-      <div className="text-center max-w-[1250px] w-[97%] mx-auto  py-7 my-32">
+      <div className="text-center max-w-[1250px] w-[97%] mx-auto  py-7 my-16">
         <h1 className="md:text-3xl text-2xl font-bold">Online Resume</h1>
 
         <button className="bg-[#8750F7] hover:bg-blue-700 text-base text-white rounded-full font-bold py-3 px-4  mt-5">
@@ -27,30 +27,23 @@ const Resume = ({ theme }) => {
                 Thomson Onyedikachi
               </h1>
               <span className="text-gray-900 text-lg mt-2 font-semibold">
-                Mid level Software Engineer
+                 Software Engineer
               </span>
             </div>
 
             <div className="border-l-2 mt-4 border-gray-300 h-32">
               <div className="flex flex-col space-y-3 items-start pl-4">
                 <a href="tel:01234567890" className="text-gray-900 text-base">
-                  0123 4567 890
+                09159163256
                 </a>
                 <a
                   href="mailto:Evans@yourwebsite.com"
                   className="text-gray-900 text-base"
                 >
-                  Evans@yourwebsite.com
+                  tomsinonyedikachi@gmail.com
                 </a>
-                <a
-                  href="http://www.yourwebsite.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-900 text-base"
-                >
-                  www.yourwebsite.com
-                </a>
-                <span className="text-gray-900 text-base">New York</span>
+               
+                <span className="text-gray-900 text-base">Nigeria</span>
               </div>
             </div>
           </div>

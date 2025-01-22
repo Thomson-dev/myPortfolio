@@ -75,7 +75,7 @@ const Sidebar = () => {
           />
           <div className="mt-3">
             <h3 className="text-center text-lg font-semibold">Thomson Dev</h3>
-            <span className="text-sm">Mid level Software Engineer</span>
+            <span className="text-sm"> Software Engineer</span>
             <div className="flex gap-5 justify-center mt-2  items-center">
               <button className="border border-[#8750F7] rounded-full p-2">
                 <a target="_blank" href="https://github.com/Thomson-dev">

@@ -16,7 +16,7 @@ const Contact = ({ theme }) => {
       className="py-5"
       id="Contact"
     >
-      <div className="flex justify-center space-y-4 items-center flex-col">
+      <div className="flex justify-center px-4 space-y-4 items-center flex-col">
         <h3 className=" text-3xl font-bold text-center">Contact</h3>
         <p className="max-w-4xl text-base md:text-lg figtree mt-3 tracking-wide  text-center">
           Interested in hiring me for your project or just want to say hi? You
@@ -61,26 +61,26 @@ const Contact = ({ theme }) => {
       </p>
 
       <div className="md:grid-cols-3 grid-cols-2 gap-5 grid  my-14 ">
-        <div className="border-l-2 border-[#8750F7] flex  md:gap-4 items-center">
+        <div className="flex  md:gap-4 items-center">
           <IoPhonePortraitOutline className="text-3xl hidden  md:text-5xl text-[#8750F7] " />
-          <div className="flex flex-col mx-2 space-y-2 items-center">
+          <div className="flex flex-col mx-2 space-y-2 items-start">
             <h2 className="text-lg md:text-2xl font-bold">Phone</h2>
             <span className="text-base md:text-lg">+123-456-7890</span>
           </div>
         </div>
 
-        <div className=" border-l-2  border-[#8750F7] flex  md:px-6  py-2 md:gap-4 items-center">
+        <div className="  flex  md:px-6  py-2 md:gap-4 items-center">
           <LuMapPin className="text-3xl hidden md:text-5xl text-[#8750F7] " />
-          <div className="flex flex-col mx-2 space-y-2 items-center">
+          <div className="flex flex-col mx-2 space-y-2 items-start">
             <h2 className="text-lg md:text-2xl font-bold">Location</h2>
             <span className="text-base md:text-lg"> Yaba, Lagos, Nigeria</span>
           </div>
         </div>
 
-        <div className=" border-l-2  border-[#8750F7] flex md:px-6 py-2 gap-4 items-center">
+        <div className="  flex md:px-6 py-2 gap-4 items-center">
           <MdOutlineEmail className="md:text-5xl hidden text-[#8750F7] " />
-          <div className="flex flex-col mx-2 space-y-2 items-center">
-            <h2 className="md:text-2xl text-xl font-bold">Email</h2>
+          <div className="flex flex-col mx-2 space-y-2 items-start">
+            <h2 className="md:text-2xl text-lg font-bold">Email</h2>
             <span> tomsinonyedikachi@gmail</span>
           </div>
         </div>
@@ -96,11 +96,11 @@ const Contact = ({ theme }) => {
         ></iframe>
       </div>
 
-      <div className="border mt-10 p-5 md:p-10 rounded-xl">
+      <div className="border mt-10 p-3 md:p-10 rounded-xl">
         <form className="space-y-4">
           <div className="md:flex-row flex-col items-center w-full   flex gap-5">
             <div className="flex w-full flex-col">
-              <label htmlFor="name" className="text-lg font-semibold">
+              <label htmlFor="name" className="text-lg py-2 ">
                 Name
               </label>
               <input
@@ -111,7 +111,7 @@ const Contact = ({ theme }) => {
               />
             </div>
             <div className="flex w-full flex-col">
-              <label htmlFor="email" className="text-lg outline-none font-semibold">
+              <label htmlFor="email" className="text-lg py-2 outline-none ">
                 Email
               </label>
               <input
@@ -124,7 +124,7 @@ const Contact = ({ theme }) => {
           </div>
 
           <div className="flex flex-col">
-            <label htmlFor="message" className="text-lg font-semibold">
+            <label htmlFor="message" className="text-lg py-2">
               Message
             </label>
             <textarea

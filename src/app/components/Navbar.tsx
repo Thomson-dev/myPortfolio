@@ -75,7 +75,7 @@ const Navbar = ({ theme, handleToggleTheme }) => {
     <div
       className={` relative lg:max-w-full md:max-w-[1000px] mx-auto lg:hidden flex justify-between w-full items-center  ${
         scroll
-          ? ` sticky top-0 bg-[#050709] py-5 shadow-md px-4 duration-500 z-50 ease-out ${
+          ? ` sticky top-0 bg-[#050709] py-3 shadow-md px-4 duration-500 z-50 ease-out ${
               theme === "dark" ? "bg-[#050709] " : "bg-white"
             }`
           : "xl:px-20 px-5 py-9"

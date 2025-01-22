@@ -14,7 +14,7 @@ import Link from "next/link";
 const Hero = ({ theme, handleToggleTheme }) => {
   console.log(handleToggleTheme);
   return (
-    <div className="mt-7" id="About">
+    <div className="mt-2" id="About">
       <motion.div
         initial={{ x: -100, opacity: 0, scale: 0.8 }}
         whileInView={{ x: 0, opacity: 1, scale: 1 }}

@@ -57,7 +57,7 @@ const Contact = ({ theme }) => {
 
       <p className="md:text-lg text-base text-gray-800 mt-6 max-w-3xl">
         If you are going to use a passage of Lorem Ipsum, you need to be sure
-        there isn't anything embarrassing hidden in the middle of text.
+        there isn&apos;t anything embarrassing hidden in the middle of text.
       </p>
 
       <div className="md:grid-cols-3 grid-cols-2 gap-5 grid  my-14 ">

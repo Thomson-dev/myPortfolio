@@ -92,71 +92,7 @@ const All = () => {
   );
 };
 
-const WebApp = () => {
-  const webAppProjects = projects.filter(
-    (project) => project.category === "Web App"
-  );
-  return (
-    <motion.div
-      initial={{ x: -100, opacity: 0, scale: 0.8 }}
-      whileInView={{ x: 0, opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1.5 }}
-      className="grid sm:grid-cols-2 grid-cols-1 gap-8 mt-[3rem]  "
-    >
-      {webAppProjects.map((project) => (
-        <div key={project.id}>
-          <Image
-            src={project.image}
-            className="bg-[#140C1C] mx-auto sm:p-8 p-4 rounded-xl"
-            alt={project.title}
-          />
 
-          {project.technologies.map((tech) => (
-            <div className="">
-              <p>{tech}</p>
-            </div>
-          ))}
-          {/* <h2>{project.title}</h2>
-          <p>{project.description}</p> */}
-        </div>
-      ))}
-    </motion.div>
-  );
-};
-
-const WebDesign = () => {
-  const webDesignProjects = projects.filter(
-    (project) => project.category === "Web Design"
-  );
-  return (
-    <motion.div
-      initial={{ x: -100, opacity: 0, scale: 0.8 }}
-      whileInView={{ x: 0, opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1.5 }}
-      className="grid sm:grid-cols-2 grid-cols-1 gap-8 mt-[3rem]  "
-    >
-      {webDesignProjects.map((project) => (
-        <div key={project.id}>
-          <Image
-            src={project.image}
-            className="bg-[#140C1C] mx-auto sm:p-8 p-4 rounded-xl"
-            alt={project.title}
-          />
-
-          {project.technologies.map((tech) => (
-            <div className="">
-              <p>{tech}</p>
-            </div>
-          ))}
-           <h2>{project.title}</h2>
-          {/* <p>{project.description}</p>  */}
-        </div>
-      ))}
-    </motion.div>
-  );
-};
 //@ts-ignore
 const Projects = ({ theme }) => {
   const [toggleState, setToggleState] = useState(1);
@@ -221,11 +157,11 @@ const Projects = ({ theme }) => {
           </div>
 
           <div className={`${toggleState === 2 ? "block" : "hidden"}`}>
-            <WebDesign />
+          <All />
           </div>
 
           <div className={`${toggleState === 3 ? "block" : "hidden"}`}>
-            <WebApp />
+          <All />
           </div>
         </div>
       </div>

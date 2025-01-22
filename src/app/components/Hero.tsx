@@ -57,7 +57,7 @@ const Hero = ({ theme, handleToggleTheme }) => {
               theme == "dark" ? "text-[#DDDDDD]" : "text-black"
             }`}
           >
-          I'm a software engineer specializing in scalable web apps. Explore my blog, project portfolio and online resume.
+          I&apos;m a software engineer specializing in scalable web apps. Explore my blog, project portfolio and online resume.
           </p>
 
           <div className="flex sm:flex-row flex-col gap-7">

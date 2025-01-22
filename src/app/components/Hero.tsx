@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import profile from "@/app/assert/photo.jpg";
+import profile from "@/app/assert/photo1.jpg";
 import { LuAward } from "react-icons/lu";
 import { FaBriefcase } from "react-icons/fa6";
 import Image from "next/image";
@@ -20,14 +20,14 @@ const Hero = ({ theme, handleToggleTheme }) => {
         whileInView={{ x: 0, opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.5 }}
-        className={`flex md:flex-row flex-col  items-center rounded-xl bg-[#140C1C]  px-3  shadow-md border lg:p-14  py-12 ${
+        className={`flex md:flex-row flex-col  items-center rounded-xl bg-[#140C1C]  px-3  shadow border lg:p-14  py-12 ${
           theme == "dark" ? "bg-[#140C1C] border-[#261846] " : "bg-[#F6F3FC] "
         }`}
       >
         <div className="lg:w-[30%] sm:block hidden w-full">
           <Image
             src={profile}
-            className=" lg:max-w-[500px] w-full aspect-square  rounded-xl   "
+            className="  w-full aspect-[1/1.2]  rounded-xl   "
             alt=""
           />
         </div>
@@ -35,35 +35,34 @@ const Hero = ({ theme, handleToggleTheme }) => {
         <div className="flex flex-col md:space-y-5 space-y-5 lg:w-[70%] w-full lg:px-10 md:px-6 ">
           <div className="lg:leading-relaxed leading-9">
             <h1
-              className={`xl:text-6xl lg:text-5xl  text-grad text-[2rem] font-bold `}
+              className={`xl:text-6xl lg:text-5xl mt-5 text-grad text-[2rem] font-bold `}
             >
               Hi, I am Thomson
             </h1>
-            <h1 className="xl:text-6xl lg:text-5xl text-grad   font-bold  text-[2rem] text-[#5D35AE]  sora">
-              Software Engineer
+            <h1 className="xl:text-6xl lg:text-5xl text-grad   font-bold  text-[2rem] text-blue-500  sora">
+              Software Developer
             </h1>
           </div>
 
           <div className="lg:w-[30%] sm:hidden block w-full">
             <Image
               src={profile}
-              className=" max-w-[300px] mx-auto w-full aspect-square  rounded-xl   "
+              className=" max-w-[300px] mx-auto w-full aspect-[]  rounded-xl   "
               alt=""
             />
           </div>
 
           <p
-            className={`xl:text-xl sm:text-lg text-base  figtree font-normal   max-w-lg  ${
+            className={` text-lg  figtree   max-w-lg  ${
               theme == "dark" ? "text-[#DDDDDD]" : "text-black"
             }`}
           >
-            I design and code beautifully appealing, user-friendly websites, and
-            I love what I do. Simple as that!
+          I'm a software engineer specializing in scalable web apps. Explore my blog, project portfolio and online resume.
           </p>
 
           <div className="flex sm:flex-row flex-col gap-7">
-            <button className="w-36 bg-[#8750F7] text-white sora font-semibold py-3 rounded-full ">
-              Hire me
+            <button className="w-fit px-4 bg-[#8750F7] text-white sora font-semibold py-4 rounded-full ">
+              Download Resume
             </button>
             <div className="flex gap-5   items-center">
               <button className="border border-[#8750F7] rounded-full p-2">
@@ -95,11 +94,11 @@ const Hero = ({ theme, handleToggleTheme }) => {
         whileInView={{ x: 0, opacity: 1, scale: 1 }}
         transition={{ duration: 1.5 }}
         viewport={{ once: true }}
-        className={`border mt-10 rounded-xl  shadow-md    py-12  xl:p-14  ${
+        className={`border mt-10 rounded-xl  shadow    py-12  xl:p-14  ${
           theme == "dark" ? "bg-[#140C1C] border-[#261846] " : "bg-[#F6F3FC] "
         } `}
       >
-        <div className="grid sm:grid-cols-4 figtree  grid-cols-2 place-items-center justify-between   ">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 figtree gap-8  grid-cols-2 place-items-center justify-between   ">
           <div className="space-y-7 flex flex-col items-center ">
             <LuAward className="text-4xl text-center  text-[#5f38b5] " />
             <h1

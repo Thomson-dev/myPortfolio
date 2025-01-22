@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Figtree } from "next/font/google";
+import Sidebar from './components/Sidebar';
 import "./globals.css";
 
 // const inter = Inter({ subsets: ["latin"] });
+const figTree = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Thomson Porfolio",
@@ -10,13 +12,21 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
+  
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body >{children}</body>
+      <body className={`${figTree.className} flex`}>
+        <div>
+          <Sidebar />
+          <main className="flex-1 ml-0 xl:ml-[19rem] lg:ml-[20rem] ">
+            {children}
+          </main>
+        </div>
+      </body>
     </html>
   );
 }

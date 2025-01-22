@@ -1,188 +1,148 @@
 import React from "react";
-import { Button, Input, Textarea } from "@material-tailwind/react";
-import { FaPhoneVolume } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { IoPhonePortraitOutline } from "react-icons/io5";
+import { LuMapPin } from "react-icons/lu";
+import { MdOutlineEmail } from "react-icons/md";
 import { motion } from "framer-motion";
+
 //@ts-ignore
 const Contact = ({ theme }) => {
   return (
-    <div className="grid lg:grid-cols-2 grid-cols-1  space-y-10 py-[5rem] lg:gap-10 xl:gap-32 ">
-      <motion.div
-        initial={{ x: -100, opacity: 0, scale: 0.8 }}
-        whileInView={{ x: 0, opacity: 1, scale: 1 }}
-        transition={{ duration: 1.5 }}
-        viewport={{ once: true }}
-        className={`flex flex-col 
-           shadow-md xl:p-9 p-2 py-7 rounded-xl w-full ${
-             theme == "dark" ? "bg-[#140C1C] " : "bg-[#ffff] "
-           }`}
-           id="Contact"
-      >
-        <h1 className=" text-left text-grad font-bold  text-[1.8rem]">
-          Let’s work together!
-        </h1>
-        <p
-          className={` xl:text-lg sm:text-lg text-base figtree   leading-6 max-w-lg tracking-wide   ${
-            theme == "dark" ? "text-white" : "text-[#653ABC]"
-          }  `}
-        >
-        I design and code beautifully simple things. I love what I do
+    <motion.div
+      initial={{ x: -100, opacity: 0, scale: 0.8 }}
+      whileInView={{ x: 0, opacity: 1, scale: 1 }}
+      transition={{ duration: 1.5 }}
+      viewport={{ once: true }}
+      className="py-5"
+      id="Contact"
+    >
+      <div className="flex justify-center space-y-4 items-center flex-col">
+        <h3 className=" text-3xl font-bold text-center">Contact</h3>
+        <p className="max-w-4xl text-base md:text-lg figtree mt-3 tracking-wide  text-center">
+          Interested in hiring me for your project or just want to say hi? You
+          can fill in the contact form below or send me an email to
+          evans@yourwebsite.com .Want to get connected? Follow me on the social
+          channels below.
         </p>
-        <div className="flex-col flex mt-5 space-y-6">
-          <div className="flex flex-col sm:flex-row sm:space-x-5 space-y-4 sm:space-y-0 ">
-            <input
-              placeholder="First Name"
-              className={` py-3  sm:w-[45%] w-full text-base px-3  rounded-lg border border-[#484545]   ${
-                theme == "dark"
-                  ? "bg-[#000000] text-white outline-[#653ABC] outline-1"
-                  : "bg-[#F6F3FC] text-black outline-none "
-              }  `}
-            />
-            <input
-              placeholder="Last Name"
-              className={` py-3  sm:w-[45%] w-full text-base px-3  rounded-lg border border-[#484545]   ${
-                theme == "dark"
-                  ? "bg-[#000000] text-white outline-[#653ABC] outline-1"
-                  : "bg-[#F6F3FC] text-black outline-none "
-              }  `}
-            />
+
+        <div className="flex gap-5 justify-center mt-2  items-center">
+          <button className="border border-[#8750F7] rounded-full p-2">
+            <a target="_blank" href="https://github.com/Thomson-dev">
+              <FaGithub className="text-base text-[#8750F7]" />
+            </a>
+          </button>
+          <button className="border border-[#8750F7] rounded-full p-2">
+            <a target="_blank" href="https://x.com/ThomsonOnyedika">
+              <FaTwitter className="text-base text-[#8750F7]" />
+            </a>
+          </button>
+          <button className="border border-[#8750F7] rounded-full p-2">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/onyedikachi-thomson/"
+            >
+              <FaLinkedinIn className="text-base text-[#8750F7]" />
+            </a>
+          </button>
+        </div>
+      </div>
+
+      <hr className="mt-16" />
+
+      <div className="mt-10 border-l-2 py-3  border-[#8750F7] ">
+        <h1 className="md:text-5xl text-2xl font-bold ml-2  ">
+          Contact Details
+        </h1>
+      </div>
+
+      <p className="md:text-lg text-base text-gray-800 mt-6 max-w-3xl">
+        If you are going to use a passage of Lorem Ipsum, you need to be sure
+        there isn't anything embarrassing hidden in the middle of text.
+      </p>
+
+      <div className="md:grid-cols-3 grid-cols-2 gap-5 grid  my-14 ">
+        <div className="border-l-2 border-[#8750F7] flex  md:gap-4 items-center">
+          <IoPhonePortraitOutline className="text-3xl hidden  md:text-5xl text-[#8750F7] " />
+          <div className="flex flex-col mx-2 space-y-2 items-center">
+            <h2 className="text-lg md:text-2xl font-bold">Phone</h2>
+            <span className="text-base md:text-lg">+123-456-7890</span>
           </div>
-          <div className="flex flex-col sm:flex-row sm:space-x-5 space-y-4 sm:space-y-0">
-            <input
-              placeholder="Email Address"
-              className={` py-3  sm:w-[45%] w-full text-base px-3  rounded-lg border border-[#484545]   ${
-                theme == "dark"
-                  ? "bg-[#000000] text-white outline-[#653ABC] outline-1"
-                  : "bg-[#F6F3FC] text-black outline-none "
-              }  `}
-            />
-            <input
-              placeholder="Phone Number"
-              className={` py-3  sm:w-[45%] w-full text-base px-3  rounded-lg border border-[#484545]   ${
-                theme == "dark"
-                  ? "bg-[#000000] text-white outline-[#653ABC] outline-1"
-                  : "bg-[#F6F3FC] text-black outline-none "
-              }  `}
-            />
+        </div>
+
+        <div className=" border-l-2  border-[#8750F7] flex  md:px-6  py-2 md:gap-4 items-center">
+          <LuMapPin className="text-3xl hidden md:text-5xl text-[#8750F7] " />
+          <div className="flex flex-col mx-2 space-y-2 items-center">
+            <h2 className="text-lg md:text-2xl font-bold">Location</h2>
+            <span className="text-base md:text-lg"> Yaba, Lagos, Nigeria</span>
+          </div>
+        </div>
+
+        <div className=" border-l-2  border-[#8750F7] flex md:px-6 py-2 gap-4 items-center">
+          <MdOutlineEmail className="md:text-5xl hidden text-[#8750F7] " />
+          <div className="flex flex-col mx-2 space-y-2 items-center">
+            <h2 className="md:text-2xl text-xl font-bold">Email</h2>
+            <span> tomsinonyedikachi@gmail</span>
+          </div>
+        </div>
+      </div>
+      <div className="mt-10">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15856.496540959573!2d3.3509657086100204!3d6.505966747105633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c8c358b3f4b%3A0x5552cfbd43df8434!2sYaba%2C%20Oworonshoki%2C%20Lagos!5e0!3m2!1sen!2sng!4v1736160565624!5m2!1sen!2sng"
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen={true}
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <div className="border mt-10 p-5 md:p-10 rounded-xl">
+        <form className="space-y-4">
+          <div className="md:flex-row flex-col items-center w-full   flex gap-5">
+            <div className="flex w-full flex-col">
+              <label htmlFor="name" className="text-lg font-semibold">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                className="border border-gray-300 p-4 outline-none rounded-md"
+                required
+              />
+            </div>
+            <div className="flex w-full flex-col">
+              <label htmlFor="email" className="text-lg outline-none font-semibold">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="border border-gray-300 p-4 outline-none rounded-md"
+                required
+              />
+            </div>
           </div>
 
-          <div className="w-full">
+          <div className="flex flex-col">
+            <label htmlFor="message" className="text-lg font-semibold">
+              Message
+            </label>
             <textarea
-              placeholder="Message"
-              className={`bg-[#000000] sm:w-[95%] w-full   text-base px-3 py-3 rounded-lg border border-[#484545]  text-[#DDDDDD]  ${
-                theme == "dark"
-                  ? "bg-[#000000] text-white outline-[#653ABC] outline-1"
-                  : "bg-[#F6F3FC] text-black outline-none "
-              } `}
-              cols={40}
-              rows={10}
-            />
+              id="message"
+              className="border border-gray-300 outline-none p-5 rounded-md"
+              rows={6}
+              required
+            ></textarea>
           </div>
-          {/* @ts-ignore */}
-          <Button
-            ripple={true}
-            size={undefined } 
-            className="w-40 py-3 normal-case text-base bg-[#653ABC]   rounded-full"
+          <button
+            type="submit"
+            className="bg-[#8750F7] text-white p-4 mt-6 rounded-full hover:bg-blue-700 transition duration-200"
           >
             Send Message
-          </Button>
-        </div>
-      </motion.div>
-
-      <motion.div
-        initial={{ x: -100, opacity: 0, scale: 0.8 }}
-        whileInView={{ x: 0, opacity: 1, scale: 1 }}
-        transition={{ duration: 1.5 }}
-        viewport={{ once: true }}
-        className="w-full flex justify-center space-y-9  flex-col "
-      >
-        <div className="flex sm:gap-14  gap-5   items-center">
-          <div
-            className={`bg-[#653ABC] rounded-full p-3 ${
-              theme == "dark" ? "text-white" : "text-white"
-            } `}
-          >
-            <FaPhoneVolume className="text-2xl" />
-          </div>
-          <div className="flex flex-col">
-            <div className="">
-              <h6
-                className={`text-lg figtree ${
-                  theme == "dark" ? "text-white" : "text-[#653ABC]"
-                } `}
-              >
-                Phone
-              </h6>
-              <h1
-                className={`sm:text-xl text-lg figtree  ${
-                  theme == "dark" ? "text-white" : "text-[#653ABC]"
-                } `}
-              >
-                09159163256
-              </h1>
-            </div>
-          </div>
-        </div>
-
-        <div className=" flex sm:gap-14 gap-5  items-center">
-          <div
-            className={`bg-[#653ABC] rounded-full p-3 ${
-              theme == "dark" ? "text-white" : "text-white"
-            } `}
-          >
-            <MdEmail className="text-2xl " />
-          </div>
-          <div className="flex flex-col">
-            <div className="">
-              <h6
-                className={`sm:text-xl figtree text-lg ${
-                  theme == "dark" ? "text-white" : "text-[#653ABC]"
-                } `}
-              >
-                Email
-              </h6>
-              <h1
-                className={`sm:text-xl figtree text-lg ${
-                  theme == "dark" ? "text-white" : "text-[#653ABC]"
-                } `}
-              >
-                {" "}
-                tomsinonyedikachi@gmail.com
-              </h1>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex sm:gap-14 gap-5  items-center">
-          <div
-            className={`bg-[#653ABC] rounded-full p-3 ${
-              theme == "dark" ? "text-white" : "text-white"
-            } `}
-          >
-            <FaMapMarkerAlt className="text-2xl" />
-          </div>
-          <div className="flex flex-col">
-            <div className="">
-              <h6
-                className={`text-lg ${
-                  theme == "dark" ? "text-white" : "text-[#653ABC]"
-                } `}
-              >
-                Address
-              </h6>
-              <p
-                className={`sm:text-xl figtree text-lg max-w-72 ${
-                  theme == "dark" ? "text-white" : "text-[#653ABC]"
-                } `}
-              >
-                Nigerial, Lagos State
-              </p>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-    </div>
+          </button>
+        </form>
+      </div>
+    </motion.div>
   );
 };
 

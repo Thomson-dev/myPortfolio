@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import img1 from "../assert/project2.png";
 import img2 from "../assert/project3.png";
-import img3 from "../assert/project4.png";
-import img4 from "../assert/4.jpg";
+import img3 from "../assert/project1.png";
+import img4 from "../assert/project4.png";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,34 +20,39 @@ type Props = {};
 const projects = [
   {
     id: 1,
-    title: "Project One",
+    title: "Crypto Website Development for DeFi X",
     description: "Description for project one",
     image: img1,
-    url: 'https://eblog-three.vercel.app/',
+    url: "https://eblog-three.vercel.app/",
     category: "Web App",
+    technologies: ["Next Js", "TypeScript", "Tailwind CSS  ", "Express", " MongoDB"],
   },
   {
     id: 2,
-    title: "Project Two",
+    title: "Crypto Website Development for DeFi X",
     description: "Description for project two",
     image: img2,
-    url: 'https://molla-frontend.vercel.app',
+    url: "https://molla-frontend.vercel.app",
     category: "Web App",
+    technologies: ["React Js", "TypeScript", "Tailwind CSS  ", "Express", " MongoDB"],
   },
   {
     id: 3,
-    title: "Project Three",
+    title: "Crypto Website Development for DeFi X",
     description: "Description for project three",
     image: img3,
-    url: ' https://prime-base.vercel.app/',
+    url: " https://prime-base.vercel.app/",
     category: "Web Design",
+    technologies: ["React Js", "TypeScript", "Tailwind CSS  ", "Express", " MongoDB"],
   },
   {
     id: 4,
-    title: "Project Three",
+    title: "Crypto Website Development for DeFi X",
     description: "Description for project three",
     image: img4,
+    url:"https://elzeevahomez.com/",
     category: "Web App",
+    technologies: ["React Js", "TypeScript", "Tailwind CSS  ", "Express", " MongoDB"],
   },
 ];
 
@@ -58,24 +63,29 @@ const All = () => {
       whileInView={{ x: 0, opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 1.5 }}
-      className="grid lg:grid-cols-2 grid-cols-1 gap-8 mt-[3rem]  "
+      className="grid lg:grid-cols-2 grid-cols-1 gap-8 max-w-[1200px] mx-auto  mt-[3rem]  "
     >
       {projects.map((project) => (
-        <div
+        <div key={project.id} className=" mt-10   ">
+          <Link target="_blank" href={project.url || ""}>
+            <div className="w-[100%] hover:border hover:border-blue-700 hover:p-4">
+              <Image
+                src={project.image}
+                className=" h-[20rem] w-full shadow aspect-square"
+                alt={project.title}
+              />
+            </div>
+            <div className="flex flex-row py-8  flex-wrap items-center gap-2 ">
+              {project.technologies.map((tech) => (
+                <div className="border w-fit py-3 px-5  rounded-full">
+                  <span className="text-base ">{tech}</span>
+                </div>
+              ))}
+            </div>
+          </Link>
 
-          key={project.id}
-          className="bg-[#140C1C] mx-auto sm:px-8 sm:pt-8 px-4 pt-4 rounded-xl"
-        >
-        <Link target="_blank" href= {project.url || '' }>
-        <Image
-            src={project.image}
-            className="max-w-full h-auto object-cover"
-            alt={project.title}
-          />
-        </Link>
-         
-          {/* <h2>{project.title}</h2>
-          <p>{project.description}</p> */}
+           <h2 className="text-xl font-semibold">{project.title}</h2>
+          {/* <p>{project.description}</p>  */}
         </div>
       ))}
     </motion.div>
@@ -98,9 +108,15 @@ const WebApp = () => {
         <div key={project.id}>
           <Image
             src={project.image}
-           className="bg-[#140C1C] mx-auto sm:p-8 p-4 rounded-xl"
+            className="bg-[#140C1C] mx-auto sm:p-8 p-4 rounded-xl"
             alt={project.title}
           />
+
+          {project.technologies.map((tech) => (
+            <div className="">
+              <p>{tech}</p>
+            </div>
+          ))}
           {/* <h2>{project.title}</h2>
           <p>{project.description}</p> */}
         </div>
@@ -125,11 +141,17 @@ const WebDesign = () => {
         <div key={project.id}>
           <Image
             src={project.image}
-           className="bg-[#140C1C] mx-auto sm:p-8 p-4 rounded-xl"
+            className="bg-[#140C1C] mx-auto sm:p-8 p-4 rounded-xl"
             alt={project.title}
           />
-          {/* <h2>{project.title}</h2>
-          <p>{project.description}</p> */}
+
+          {project.technologies.map((tech) => (
+            <div className="">
+              <p>{tech}</p>
+            </div>
+          ))}
+           <h2>{project.title}</h2>
+          {/* <p>{project.description}</p>  */}
         </div>
       ))}
     </motion.div>
@@ -185,7 +207,7 @@ const Projects = ({ theme }) => {
   };
 
   return (
-    <div className="mt-[10rem]"  id="Porfolio">
+    <div className="mt-[10rem]" id="Porfolio">
       <h1 className="text-center text-grad font-bold  xl:text-5xl lg:text-4xl  text-grad text-[1.8rem] ">
         My Recent Works
       </h1>

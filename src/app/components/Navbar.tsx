@@ -37,9 +37,14 @@ const Navbar = ({ theme, handleToggleTheme }) => {
       id: 4,
     },
     {
+      href: "Resume",
+      label: "Resume",
+      id: 5,
+    },
+    {
       href: "Contact",
       label: "Contact",
-      id: 5,
+      id: 6,
     },
     // Add more links as needed
   ];
@@ -68,7 +73,7 @@ const Navbar = ({ theme, handleToggleTheme }) => {
 
   return (
     <div
-      className={` relative lg:max-w-full md:max-w-[1000px] mx-auto flex justify-between w-full items-center  ${
+      className={` relative lg:max-w-full md:max-w-[1000px] mx-auto lg:hidden flex justify-between w-full items-center  ${
         scroll
           ? ` sticky top-0 bg-[#050709] py-5 shadow-md px-4 duration-500 z-50 ease-out ${
               theme === "dark" ? "bg-[#050709] " : "bg-white"
@@ -76,12 +81,12 @@ const Navbar = ({ theme, handleToggleTheme }) => {
           : "xl:px-20 px-5 py-9"
       }  `}
     >
-      <div className="flex items-center ">
-        <Image
+      <div className="flex  items-center ">
+        {/* <Image
           src={logo}
           alt="Your image description"
           className="max-w-[50px] h-auto"
-        />
+        /> */}
         <a href="" className="md:pl-8">
           <h3
             className={`text-base sora hidden lg:block text-slate-950  hover:text-[#8750f7] duration-500 ${
@@ -132,14 +137,14 @@ const Navbar = ({ theme, handleToggleTheme }) => {
         })}
       </motion.ul>
       <div className="flex items-center space-x-3">
-        <button
+        {/* <button
           onClick={handleToggleTheme}
           className={`text-2xl ${
             theme == "dark" ? "text-white" : "text-[#2A1454]"
           }`}
         >
           <GoSun />
-        </button>
+        </button> */}
         <button className="py-3 w-36  bg-[#8750F7] font-bold rounded-full text-white ">
           Resume
         </button>

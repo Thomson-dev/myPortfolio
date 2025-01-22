@@ -7,6 +7,7 @@ import About from "../components/About";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Experience from "../components/Experience";
+import Resume from "../components/Resume";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
@@ -35,15 +36,16 @@ const HomeScreen = (props: Props) => {
       </div>
 
       <div
-        className={` ${theme == "dark" ? "bg-[#050709] " : "bg-[#F6F3FC] "}  `}
+        className={` ${theme == "dark" ? "bg-[#050709] " : "bg-white "}  `}
       >
-        <Experience theme={theme} />
+        {/* <Experience theme={theme} /> */}
+        <Resume theme={theme}  />
       </div>
       <div className="lg:max-w-[1350px] md:max-w-[1000px]  w-[94%] mx-auto ">
-        <Contact theme={theme} />
+         <Contact theme={theme} /> 
       </div>
       <div className="">
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );

@@ -76,8 +76,8 @@ const All = () => {
               />
             </div>
             <div className="flex flex-row py-8  flex-wrap items-center gap-2 ">
-              {project.technologies.map((tech) => (
-                <div className="border w-fit py-3 px-5  rounded-full">
+              {project.technologies.map((tech, index) => (
+                <div key ={index} className="border w-fit py-3 px-5  rounded-full">
                   <span className="text-base ">{tech}</span>
                 </div>
               ))}
@@ -91,6 +91,8 @@ const All = () => {
     </motion.div>
   );
 };
+
+
 
 
 //@ts-ignore
@@ -161,7 +163,7 @@ const Projects = ({ theme }) => {
           </div>
 
           <div className={`${toggleState === 3 ? "block" : "hidden"}`}>
-          <All />
+              <All />
           </div>
         </div>
       </div>

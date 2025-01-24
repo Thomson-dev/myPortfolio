@@ -83,59 +83,43 @@ import React from 'react'
 
 
 const experiences = [
-  {
-    title: "Senior Software Engineer",
-    company: "Google",
-    period: "2023 - Present",
-    description: "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.",
-    highlights: [
-      "Lorem ipsum dolor sit amet, consectetuer.",
-      "Aenean commodo ligula eget dolor.",
-      "Etiam ultricies nisi vel augue."
-    ]
-  },
-  {
-    title: "Lead Software Developer",
-    company: "Apple",
-    period: "2016 - 2019",
-    description: "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.",
-    highlights: [
-      "Lorem ipsum dolor sit amet, consectetuer.",
-      "Aenean commodo ligula eget dolor.",
-      "Etiam ultricies nisi vel augue."
-    ]
-  },
-  {
-    title: "Senior Software Developer",
-    company: "Dropbox",
-    period: "2014 - 2016",
-    description: "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.",
-    highlights: [
-      "Lorem ipsum dolor sit amet, consectetuer.",
-      "Aenean commodo ligula eget dolor."
-    ]
-  },
-  {
-    title: "Senior Developer",
-    company: "Uber",
-    period: "2013 - 2014",
-    description: "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel.",
-    highlights: []
-  },
-  {
-    title: "Backend Developer",
-    company: "Amazon",
-    period: "2014 - 2016",
-    description: "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel.",
-    highlights: []
-  },
-  {
-    title: "Frontend Developer",
-    company: "Startup",
-    period: "2013 - 2014",
-    description: "Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel.",
-    highlights: []
-  }
+  
+    {
+      "title": "Software Engineer Intern",
+      "company": "Ozitech",
+      "period": "2023",
+      "description": "Contributed to the development of an interactive cryptocurrency investment calculator, delivering a seamless user experience.",
+      "highlights": [
+        "Designed and implemented an intuitive user interface with React and Ant Design.",
+        "Built real-time calculations for cryptocurrency returns using JavaScript.",
+        "Ensured cross-platform responsiveness for mobile and desktop devices."
+      ]
+    },
+    {
+      "title": "Freelance Developer",
+      "company": "Fastgak",
+      "period": "2022 - 2023",
+      "description": "Developed a feature-rich mobile application leveraging modern JavaScript technologies.",
+      "highlights": [
+        "Integrated Google Sign-In for authentication and enhanced security with bcrypt.js.",
+        "Implemented Stripe for secure payment processing and real-time transactions.",
+        "Managed application state using Redux Toolkit for scalability and performance."
+      ]
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "E-Blog (Personal Project)",
+      "period": "2022",
+      "description": "Created a blogging platform with robust backend API and modern frontend design.",
+      "highlights": [
+        "Developed RESTful APIs for user authentication and post management.",
+        "Implemented scalable authentication mechanisms using JSON Web Tokens.",
+        "Built and deployed the application with Next.js and Vercel for optimal performance."
+      ]
+    }
+  
+  
+ 
 ];
 
 

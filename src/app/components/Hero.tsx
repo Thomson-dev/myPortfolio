@@ -57,12 +57,19 @@ const Hero = ({ theme, handleToggleTheme }) => {
               theme == "dark" ? "text-[#DDDDDD]" : "text-black"
             }`}
           >
-          I&apos;m a software engineer specializing in scalable web apps. Explore my blog, project portfolio and online resume.
+            I&apos;m a software engineer specializing in scalable web apps.
+            Explore my blog, project portfolio and online resume.
           </p>
 
           <div className="flex sm:flex-row flex-col gap-7">
             <button className="w-fit px-4 bg-[#8750F7] text-white sora font-semibold py-4 rounded-full ">
-              Download Resume
+              <a
+                href="/myResume.pdf"
+                download
+                className="w-fit px-4 bg-[#8750F7] text-white sora font-semibold py-4 rounded-full"
+              >
+                Download Resume
+              </a>
             </button>
             <div className="flex gap-5   items-center">
               <button className="border border-[#8750F7] rounded-full p-2">

@@ -63,7 +63,7 @@ const Contact = ({ theme }) => {
       <div className="md:grid-cols-3 grid-cols-2 gap-5 grid  my-14 ">
         <div className="flex  md:gap-4 items-center">
           <IoPhonePortraitOutline className="text-3xl hidden  md:text-5xl text-[#8750F7] " />
-          <div className="flex flex-col mx-2 space-y-2 items-start">
+          <div className="flex flex-col mx-2 space-y-2 md:items-center items-start">
             <h2 className="text-lg md:text-2xl font-bold">Phone</h2>
             <span className="text-base md:text-lg">+123-456-7890</span>
           </div>
@@ -71,7 +71,7 @@ const Contact = ({ theme }) => {
 
         <div className="  flex  md:px-6  py-2 md:gap-4 items-center">
           <LuMapPin className="text-3xl hidden md:text-5xl text-[#8750F7] " />
-          <div className="flex flex-col mx-2 space-y-2 items-start">
+          <div className="flex flex-col mx-2 space-y-2  md:item-center items-start">
             <h2 className="text-lg md:text-2xl font-bold">Location</h2>
             <span className="text-base md:text-lg"> Yaba, Lagos, Nigeria</span>
           </div>
@@ -79,7 +79,7 @@ const Contact = ({ theme }) => {
 
         <div className="  flex md:px-6 py-2 gap-4 items-center">
           <MdOutlineEmail className="md:text-5xl hidden text-[#8750F7] " />
-          <div className="flex flex-col mx-2 space-y-2 items-start">
+          <div className="flex flex-col mx-2 space-y-2 md:items-center items-start">
             <h2 className="md:text-2xl text-lg font-bold">Email</h2>
             <span> tomsinonyedikachi@gmail</span>
           </div>
@@ -89,7 +89,8 @@ const Contact = ({ theme }) => {
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15856.496540959573!2d3.3509657086100204!3d6.505966747105633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c8c358b3f4b%3A0x5552cfbd43df8434!2sYaba%2C%20Oworonshoki%2C%20Lagos!5e0!3m2!1sen!2sng!4v1736160565624!5m2!1sen!2sng"
           width="100%"
-          height="450"
+          className="h-[400px] md:h-[400px] "
+          height=""
           style={{ border: 0 }}
           allowFullScreen={true}
           loading="lazy"

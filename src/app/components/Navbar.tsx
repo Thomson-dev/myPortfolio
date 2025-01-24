@@ -119,7 +119,7 @@ const Navbar = ({ theme, handleToggleTheme }) => {
         animate={{ height: open ? "100vh" : 0 }}
         transition={{ duration: open ? 0.5 : 1 }}
         className={`flex  flex-col lg:hidden  ${
-          scroll ? " top-[5.6rem]" : "top-[7rem] "
+          scroll ? " top-[4.5rem]" : "top-[7rem] "
         }   space-y-9 items-center  text-white   absolute w-full bg-[#2A1454] left-0  sora  ${
           open ? " h-[100vh] pt-7  " : "h-[0rem] hidden"
         }  `}

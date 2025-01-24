@@ -20,7 +20,7 @@ type Props = {};
 const projects = [
   {
     id: 1,
-    title: "Crypto Website Development for DeFi X",
+    title: "E Blog",
     description: "Description for project one",
     image: img1,
     url: "https://eblog-three.vercel.app/",
@@ -29,7 +29,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "Crypto Website Development for DeFi X",
+    title: "Molla Ecommerce (In progress)",
     description: "Description for project two",
     image: img2,
     url: "https://molla-frontend.vercel.app",
@@ -38,7 +38,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "Crypto Website Development for DeFi X",
+    title: "Prime Base",
     description: "Description for project three",
     image: img3,
     url: " https://prime-base.vercel.app/",
@@ -47,7 +47,7 @@ const projects = [
   },
   {
     id: 4,
-    title: "Crypto Website Development for DeFi X",
+    title: "Hotel Booking ",
     description: "Description for project three",
     image: img4,
     url:"https://elzeevahomez.com/",

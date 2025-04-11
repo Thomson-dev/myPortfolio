@@ -129,20 +129,20 @@ const Experience = () => {
     <div>
       <div className="mt-10 px-1">
         <div className="border-l-4 border-[#8750F7] ">
-        <h1 className="md:text-4xl text-2xl tracking-wide  text-[#8750F7] ml-2 text-left  font-bold">
+        <h1 className="md:text-3xl text-2xl tracking-wide  text-[#8750F7] ml-2 text-left  font-bold">
         Work Experiences</h1> 
         </div>
   
         {experiences.map((experience, index) => (
           <div key={index} className="mt-[3rem] flex flex-col ">
             
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between   items-center">
             <h2 className="md:text-xl text-lg  font-semibold leading-relaxed  text-left">{experience.title}</h2>
             <h3 className="text-base text-left leading-relaxed ">{experience.company} ({experience.period})</h3>
             </div>
             
-            <p className="mt-3 text-left md:text-lg text-base leading-relaxed text-[#717171]">{experience.description}</p>
-            <ul className="list-disc  list-inside mt-2">
+            <p className="mt-3 text-left md:text-lg  text-base leading-relaxed text-[#717171]">{experience.description}</p>
+            <ul className="list-disc    list-inside mt-2">
               {experience.highlights.map((highlight, index) => (
                 <li className='text-lg text-left mt-3 leading-relaxed text-[#717171]' key={index}>{highlight}</li>
               ))}

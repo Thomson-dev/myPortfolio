@@ -28,8 +28,7 @@ return (
 
  
     <AboutScreen />
-    <Bottombar />
-  
+
 
  
   </div>

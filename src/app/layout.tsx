@@ -16,11 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="overflow-x-hidden">
         <ThemeProvider>
-          <div className="flex">
+          <div className="flex min-h-screen overflow-x-hidden">
             <Sidebar />
-            <main className="flex-1 h-full lg:ml-[20rem]">
+            <main className="flex-1 min-h-screen lg:ml-[20rem] w-full overflow-x-hidden">
               {children}
             </main>
           </div>

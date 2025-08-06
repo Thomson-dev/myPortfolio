@@ -25,12 +25,7 @@ const HomeScreen = (props: Props) => {
 return (
   <div className="theme-bg-primary">
     <Navbar />
-
- 
     <AboutScreen />
-
-
- 
   </div>
 );
 

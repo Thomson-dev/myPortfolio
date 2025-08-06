@@ -101,7 +101,7 @@ const AboutScreen = () => {
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
                 variants={itemVariants}
               >
-                <span className="theme-text-primary">Hey, I'm </span>
+                <span className="theme-text-primary">Hey, I&apos;m </span>
                 <motion.span 
                   className="text-[#78ABA8] block lg:inline"
                   animate={{ 
@@ -128,7 +128,7 @@ const AboutScreen = () => {
                   className="theme-text-primary text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0"
                   variants={itemVariants}
                 >
-                  Hey there — I'm <span className="font-semibold text-[#78ABA8]">Thomson</span>, a Computer Science student and passionate Software Engineer. I go by <span className="text-[#78ABA8] font-semibold">Thomson</span> online.
+                  Hey there — I&apos;m <span className="font-semibold text-[#78ABA8]">Thomson</span>, a Computer Science student and passionate Software Engineer. I go by <span className="text-[#78ABA8] font-semibold">Thomson</span> online.
                 </motion.p>
                 
                 <motion.p 
@@ -142,14 +142,14 @@ const AboutScreen = () => {
                   className="theme-text-secondary text-xs sm:text-sm lg:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0"
                   variants={itemVariants}
                 >
-                  I'm currently diving deeper into backend architecture, system design, and product development — always striving to create clean, scalable, and meaningful solutions.
+                  I&apos;m currently diving deeper into backend architecture, system design, and product development — always striving to create clean, scalable, and meaningful solutions.
                 </motion.p>
                 
                 <motion.p 
                   className="theme-text-secondary text-xs sm:text-sm lg:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0"
                   variants={itemVariants}
                 >
-                  Outside of code, you'll find me exploring new technologies, contributing to hackathons, or working on side projects that challenge and inspire me 🚀
+                  Outside of code, you&apos;ll find me exploring new technologies, contributing to hackathons, or working on side projects that challenge and inspire me 🚀
                 </motion.p>
               </motion.div>
               

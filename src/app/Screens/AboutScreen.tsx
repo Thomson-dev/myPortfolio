@@ -98,7 +98,7 @@ const AboutScreen = () => {
               </motion.div>
               
               <motion.h1 
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
+                className="text-3xl sm:text-4xl md:text-6xl  font-bold leading-tight"
                 variants={itemVariants}
               >
                 <span className="theme-text-primary">Hey, I&apos;m </span>
@@ -128,7 +128,7 @@ const AboutScreen = () => {
                   className="theme-text-primary text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0"
                   variants={itemVariants}
                 >
-                  Hey there — I&apos;m <span className="font-semibold text-[#78ABA8]">Thomson</span>, a Computer Science student and passionate Software Engineer. I go by <span className="text-[#78ABA8] font-semibold">Thomson</span> online.
+                  Hey there — I&apos;m <span className="font-semibold text-[#78ABA8]">Thomson</span>, a Computer Science student and passionate Software Engineer. 
                 </motion.p>
                 
                 <motion.p 
@@ -152,35 +152,8 @@ const AboutScreen = () => {
                   Outside of code, you&apos;ll find me exploring new technologies, contributing to hackathons, or working on side projects that challenge and inspire me 🚀
                 </motion.p>
               </motion.div>
-              
-              {/* Tech Stack */}
-              <motion.div 
-                className="flex flex-wrap justify-center lg:justify-start gap-2"
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                {[
-                  { icon: SiReact, name: "React", color: "green-500" },
-                  { icon: SiNodedotjs, name: "Node.js", color: "green-600" },
-                  { icon: SiMongodb, name: "MongoDB", color: "green-700" },
-                  { icon: SiTypescript, name: "TypeScript", color: "blue-600" },
-                  { icon: SiGo, name: "Go", color: "blue-500" },
-                  { name: "Web3", color: "purple-500" }
-                ].map((tech, index) => (
-                  <motion.div
-                    key={tech.name}
-                    className={`flex items-center space-x-1.5 bg-${tech.color}/10 text-${tech.color} px-2.5 py-1.5 rounded-full text-xs`}
-                    variants={techStackVariants}
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    custom={index}
-                  >
-                    {tech.icon && <tech.icon className="text-sm" />}
-                    <span className="font-medium">{tech.name}</span>
-                  </motion.div>
-                ))}
-              </motion.div>
+             
+        
               
               {/* Action Buttons */}
               <motion.div 
@@ -287,54 +260,7 @@ const AboutScreen = () => {
                   transition={{ duration: 0.3 }}
                 />
               </motion.div>
-              
-              {/* Floating Elements with Animation */}
-              <motion.div 
-                className="hidden sm:block absolute -top-2 -left-2 w-3 h-3 bg-[#78ABA8] rounded-full shadow-lg"
-                variants={floatingVariants}
-                animate="floating"
-                style={{ animationDelay: '0s' }}
-              />
-              <motion.div 
-                className="hidden sm:block absolute -bottom-3 -right-3 w-5 h-5 bg-orange-500 rounded-full shadow-lg flex items-center justify-center text-white text-xs"
-                variants={floatingVariants}
-                animate="floating"
-                style={{ animationDelay: '1s' }}
-              >
-                🚀
-              </motion.div>
-              <motion.div 
-                className="hidden md:block absolute top-1/2 -right-4 w-3 h-3 bg-yellow-500 rounded-full shadow-lg"
-                variants={floatingVariants}
-                animate="floating"
-                style={{ animationDelay: '2s' }}
-              />
-              
-              {/* Interest Icons */}
-              <motion.div 
-                className="hidden lg:block absolute top-4 left-4 w-8 h-8 bg-purple-500/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-white text-sm cursor-pointer"
-                whileHover={{ scale: 1.2, rotate: 10 }}
-                whileTap={{ scale: 0.9 }}
-                animate={{ 
-                  y: [-2, 2, -2],
-                  rotate: [0, 5, 0]
-                }}
-                transition={{ duration: 3, repeat: Infinity }}
-              >
-                💻
-              </motion.div>
-              <motion.div 
-                className="hidden lg:block absolute bottom-16 left-2 w-8 h-8 bg-pink-500/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-white text-sm cursor-pointer"
-                whileHover={{ scale: 1.2, rotate: -10 }}
-                whileTap={{ scale: 0.9 }}
-                animate={{ 
-                  y: [2, -2, 2],
-                  rotate: [0, -5, 0]
-                }}
-                transition={{ duration: 2.5, repeat: Infinity }}
-              >
-                🎨
-              </motion.div>
+
             </div>
           </motion.div>
         </div>

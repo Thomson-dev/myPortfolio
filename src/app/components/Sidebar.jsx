@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import profile from "@/app/assert/pic.png";
 import {
   FaGithub,
@@ -9,17 +9,28 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { CiUser } from "react-icons/ci";
-import { GrProjects } from "react-icons/gr";
+import { GrBlog, GrProjects } from "react-icons/gr";
 import { GoMoon, GoSun } from "react-icons/go";
 import { RiUserSettingsLine } from "react-icons/ri";
 import { TiMessages } from "react-icons/ti";
-import { Link as ScrollLink } from "react-scroll";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "./theme/themeContext";
 
 const Sidebar = () => {
   const { theme, handleToggleTheme } = useTheme();
   const currentPath = usePathname();
+  const [mounted, setMounted] = useState(false);
+
+  // Prevent hydration mismatch by mounting after client-side render
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Don't render anything until mounted
+  if (!mounted) {
+    return null;
+  }
 
   const links = [
     {
@@ -40,12 +51,13 @@ const Sidebar = () => {
       icon: <GrProjects />,
       id: 1,
     },
-    {
-      href: "Resume",
-      label: "Resume",
-      icon: <RiUserSettingsLine />,
+      {
+      href: "Blog",
+      icon: <GrBlog />,
+      label: "Blog",
       id: 5,
     },
+ 
     {
       href: "Contact",
       icon: <TiMessages />,
@@ -55,22 +67,24 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="w-[20rem] h-screen md:fixed hidden lg:block overflow-y-auto  custom-scrollbar  theme-bg-secondary">
-      <nav className="flex  h-full ">
-        <div className="sidebar-toggle-section space-y-5 flex flex-col  px-3 py-10">
+    <aside className="w-[20rem] h-screen md:fixed hidden lg:block overflow-y-auto custom-scrollbar theme-bg-secondary">
+      <nav className="flex h-full">
+        <div className="sidebar-toggle-section space-y-5 flex flex-col px-3 py-10">
           <button className="bg-[#78ABA8] p-2 rounded-full hover:opacity-80 transition-opacity">
             <FaLaptopCode className="text-lg text-white" />
           </button>
-          <button
-            onClick={handleToggleTheme}
-            className="bg-[#78ABA8] p-2 rounded-full hover:opacity-80 transition-opacity"
-          >
-            {theme === "light" ? (
-              <GoMoon className="text-lg text-white" />
-            ) : (
-              <GoSun className="text-lg text-white" />
-            )}
-          </button>
+          {mounted && ( // Conditionally render theme toggle
+            <button
+              onClick={handleToggleTheme}
+              className="bg-[#78ABA8] p-2 rounded-full hover:opacity-80 transition-opacity"
+            >
+              {theme === "light" ? (
+                <GoMoon className="text-lg text-white" />
+              ) : (
+                <GoSun className="text-lg text-white" />
+              )}
+            </button>
+          )}
         </div>
         <ul className="h-screen flex flex-col  pt-5 items-center flex-1 sidebar-main-section">
           <Image
@@ -108,21 +122,14 @@ const Sidebar = () => {
             <hr className="mt-6 theme-border" />
             <div className="flex flex-col gap-4 mt-5 pb-6">
               {links.map((link) => (
-                <ScrollLink
+                <Link
                   key={link.id}
-                  to={link.href}
-                  smooth={true}
-                  duration={500}
-                  offset={-150}
-                  spy={true}
-                  activeClass="theme-bg-accent text-white font-bold"
-                  className="cursor-pointer p-3 hover:text-white hover:theme-bg-accent rounded-lg transition duration-200 theme-text-primary"
+                  href={`/${link.href.toLowerCase()}`}
+                  className={`cursor-pointer p-3 hover:text-white hover:theme-bg-accent rounded-lg transition duration-200 theme-text-primary flex items-center gap-3 ${currentPath === `/${link.href.toLowerCase()}` ? "theme-bg-accent text-white font-bold" : ""}`}
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="text-xl">{link.icon}</span>
-                    <span className="text-sm font-medium">{link.label}</span>
-                  </div>
-                </ScrollLink>
+                  <span className="text-xl">{link.icon}</span>
+                  <span className="text-sm font-medium">{link.label}</span>
+                </Link>
               ))}
             </div>
           </div>

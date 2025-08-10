@@ -122,7 +122,7 @@ export default function BlogScreen() {
       {/* Posts */}
       {Object.entries(postsByCategory).map(([category, categoryPosts]) => (
         <div key={category} id={category} className="mt-12 scroll-mt-16">
-          <h2 className="text-2xl font-bold mb-6 theme-text-primary">{category}</h2>
+          {/* <h2 className="text-2xl font-bold mb-6 theme-text-primary">{category}</h2> */}
           <motion.div
             className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
             initial="hidden"

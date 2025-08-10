@@ -94,7 +94,7 @@ const Navbar = () => {
         <div className="p-4">
           <ResourceSection title="RESOURCES">
             <NavItem href="/blog" icon={FaBlog} text="Blog" />
-            <NavItem href="/stack" icon={FaCode} text="Stack" />
+            <NavItem href="/skills" icon={FaCode} text="Skills" />
             <NavItem href="/social" icon={FaGlobe} text="Social" />
           </ResourceSection>
         </div>

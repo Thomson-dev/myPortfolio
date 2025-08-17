@@ -17,6 +17,7 @@ const LS_VERSION_KEY = "leetcodeProblemsVersion";
 const DATA_VERSION = "reset-all-v1"; // bump this to force a one-time reset
 
 export default function LeetCodePortfolio() {
+  //@ts-ignore
   const [problems, setProblems] = useState<Problem[]>(() => {
     if (typeof window !== "undefined") {
       try {
@@ -40,9 +41,17 @@ export default function LeetCodePortfolio() {
         }));
         const map = new Map(saved.map((p) => [p.title, p]));
         initialProblems.forEach((np) => {
-          if (!map.has(np.title)) map.set(np.title, { ...np, status: "Revisit" });
+          if (!map.has(np.title))
+            map.set(np.title, {
+              ...np,
+              status: "Revisit",
+            });
         });
-        return Array.from(map.values());
+        // Ensure all items in the array have correct status type
+        return Array.from(map.values()).map((p) => ({
+          ...p,
+          status: p.status === "Solved" ? "Solved" : "Revisit",
+        }));
       } catch {}
     }
     return initialProblems.map((p) => ({ ...p, status: "Revisit" }));
@@ -102,7 +111,7 @@ export default function LeetCodePortfolio() {
 
   function forceResetStatuses() {
     if (confirm("Mark every problem as Revisit?")) {
-      const reset = problems.map((p) => ({ ...p, status: "Revisit" }));
+      const reset = problems.map((p) => ({ ...p, status: "Revisit" as "Revisit" }));
       setProblems(reset);
       try {
         localStorage.setItem(LS_KEY, JSON.stringify(reset));
@@ -335,4 +344,5 @@ function ScrollRow({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
+
 

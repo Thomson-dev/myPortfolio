@@ -47,7 +47,7 @@ const Sidebar = () => {
     },
     {
       href: "project",
-      label: "Project",
+      label: "Leetcode",
       icon: <GrProjects />,
       id: 1,
     },

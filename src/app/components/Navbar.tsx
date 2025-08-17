@@ -104,7 +104,7 @@ const Navbar = () => {
         <div className="flex-1 mt-8 space-y-1 p-4">
           {/* <NavItem href="/" icon={FaHome} text="Home" onClick={handleNavLinkClick} /> */}
           <NavItem href="/about" icon={FaUser} text="About" onClick={handleNavLinkClick} />
-          <NavItem href="/project" icon={FaLaptopCode} text="Projects" onClick={handleNavLinkClick} />
+          <NavItem href="/project" icon={FaLaptopCode} text="Leetcode" onClick={handleNavLinkClick} />
           <NavItem href="/contact" icon={MdEmail} text="Contact" onClick={handleNavLinkClick} />
         </div>
 

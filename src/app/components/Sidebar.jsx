@@ -46,8 +46,8 @@ const Sidebar = () => {
       id: 4,
     },
     {
-      href: "Porfolio",
-      label: "Porfolio",
+      href: "project",
+      label: "Project",
       icon: <GrProjects />,
       id: 1,
     },

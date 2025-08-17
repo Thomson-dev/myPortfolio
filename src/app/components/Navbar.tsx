@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   FaHome,
@@ -12,10 +12,23 @@ import {
 import { useTheme } from "./theme/themeContext";
 import { GoMoon, GoSun } from "react-icons/go";
 import { MdEmail, MdMenu, MdClose } from "react-icons/md";
+import { usePathname } from "next/navigation"; // added
 
-const NavItem = ({ href, icon: Icon, text }: { href: string; icon: any; text: string }) => (
-  <Link 
+// Added onClick prop
+const NavItem = ({
+  href,
+  icon: Icon,
+  text,
+  onClick,
+}: {
+  href: string;
+  icon: any;
+  text: string;
+  onClick?: () => void;
+}) => (
+  <Link
     href={href}
+    onClick={onClick}
     className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#78ABA8]/10 transition-all duration-300 theme-text-primary"
   >
     <Icon className="text-xl text-[#78ABA8]" />
@@ -26,17 +39,22 @@ const NavItem = ({ href, icon: Icon, text }: { href: string; icon: any; text: st
 const ResourceSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div className="mt-6">
     <h3 className="px-4 text-sm font-semibold text-gray-500 uppercase">{title}</h3>
-    <div className="mt-3 space-y-1">
-      {children}
-    </div>
+    <div className="mt-3 space-y-1">{children}</div>
   </div>
 );
 
 const Navbar = () => {
   const { theme, handleToggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname(); // added
 
   const toggleNav = () => setIsOpen(!isOpen);
+  const handleNavLinkClick = () => setIsOpen(false); // close on link click
+
+  // Auto close when route changes (e.g., via programmatic nav)
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -84,18 +102,18 @@ const Navbar = () => {
 
         {/* Main Navigation */}
         <div className="flex-1 mt-8 space-y-1 p-4">
-          {/* <NavItem href="/" icon={FaHome} text="Home" /> */}
-          <NavItem href="/about" icon={FaUser} text="About" />
-          <NavItem href="/projects" icon={FaLaptopCode} text="Projects" />
-          <NavItem href="/contact" icon={MdEmail} text="Contact" />
+          {/* <NavItem href="/" icon={FaHome} text="Home" onClick={handleNavLinkClick} /> */}
+          <NavItem href="/about" icon={FaUser} text="About" onClick={handleNavLinkClick} />
+          <NavItem href="/project" icon={FaLaptopCode} text="Projects" onClick={handleNavLinkClick} />
+          <NavItem href="/contact" icon={MdEmail} text="Contact" onClick={handleNavLinkClick} />
         </div>
 
         {/* Resources Section */}
         <div className="p-4">
           <ResourceSection title="RESOURCES">
-            <NavItem href="/blog" icon={FaBlog} text="Blog" />
-            <NavItem href="/skills" icon={FaCode} text="Skills" />
-            <NavItem href="/social" icon={FaGlobe} text="Social" />
+            <NavItem href="/blog" icon={FaBlog} text="Blog" onClick={handleNavLinkClick} />
+            <NavItem href="/skills" icon={FaCode} text="Skills" onClick={handleNavLinkClick} />
+            <NavItem href="/social" icon={FaGlobe} text="Social" onClick={handleNavLinkClick} />
           </ResourceSection>
         </div>
 

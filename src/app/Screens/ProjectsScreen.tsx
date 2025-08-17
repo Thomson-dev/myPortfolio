@@ -13,24 +13,39 @@ type Problem = {
 
 const statusOptions = ["All", "Solved", "Revisit"] as const;
 const LS_KEY = "leetcodeProblems";
+const LS_VERSION_KEY = "leetcodeProblemsVersion";
+const DATA_VERSION = "reset-all-v1"; // bump this to force a one-time reset
 
 export default function LeetCodePortfolio() {
   const [problems, setProblems] = useState<Problem[]>(() => {
     if (typeof window !== "undefined") {
       try {
         const savedRaw = localStorage.getItem(LS_KEY);
-        if (savedRaw) {
-          const saved: Problem[] = JSON.parse(savedRaw);
-          // Merge new problems (by unique title) with any previously saved
-          const map = new Map(saved.map((p) => [p.title, p]));
-          initialProblems.forEach((np) => {
-            if (!map.has(np.title)) map.set(np.title, np);
-          });
-          return Array.from(map.values());
+        const savedVersion = localStorage.getItem(LS_VERSION_KEY);
+
+        // Force reset if version changed OR no saved data
+        if (!savedRaw || savedVersion !== DATA_VERSION) {
+          const reset = initialProblems.map((p) => ({ ...p, status: "Revisit" }));
+          localStorage.setItem(LS_KEY, JSON.stringify(reset));
+            localStorage.setItem(LS_VERSION_KEY, DATA_VERSION);
+          return reset;
         }
+
+        // Use saved (and still merge any brand‑new problems as Revisit)
+        const savedRawArr = JSON.parse(savedRaw);
+        // Ensure status is typed correctly
+        const saved: Problem[] = savedRawArr.map((p: any) => ({
+          ...p,
+          status: p.status === "Solved" ? "Solved" : "Revisit",
+        }));
+        const map = new Map(saved.map((p) => [p.title, p]));
+        initialProblems.forEach((np) => {
+          if (!map.has(np.title)) map.set(np.title, { ...np, status: "Revisit" });
+        });
+        return Array.from(map.values());
       } catch {}
     }
-    return initialProblems;
+    return initialProblems.map((p) => ({ ...p, status: "Revisit" }));
   });
 
   const [category, setCategory] = useState("All");
@@ -82,6 +97,20 @@ export default function LeetCodePortfolio() {
     }
   }
 
+  // Optional: manual force reset button (add next to Reset)
+  // <button onClick={forceResetStatuses} className="text-xs px-3 py-1 rounded-full bg-amber-100 text-amber-700 hover:bg-amber-200">All Revisit</button>
+
+  function forceResetStatuses() {
+    if (confirm("Mark every problem as Revisit?")) {
+      const reset = problems.map((p) => ({ ...p, status: "Revisit" }));
+      setProblems(reset);
+      try {
+        localStorage.setItem(LS_KEY, JSON.stringify(reset));
+        localStorage.setItem(LS_VERSION_KEY, DATA_VERSION);
+      } catch {}
+    }
+  }
+
   return (
     <div className="min-h-screen w-[95%] max-w-[1500px] mx-auto  py-10 sm:py-12 theme-bg-primary transition-colors">
       {/* Header */}
@@ -123,7 +152,7 @@ export default function LeetCodePortfolio() {
 
       {/* Filters */}
       <div className="max-w-6xl mx-auto mt-10 space-y-6">
-        <div className="flex flex-col gap-4 xl:flex-row">
+        <div className="flex flex-col gap-4 xl:flex-col">
           <ScrollRow>
             {categories.map((cat) => (
               <FilterChip
@@ -134,8 +163,8 @@ export default function LeetCodePortfolio() {
                 {cat}
               </FilterChip>
             ))}
-          </ScrollRow> 
-           <ScrollRow>
+          </ScrollRow>
+          <ScrollRow>
             {statusOptions.map((s) => (
               <FilterChip
                 key={s}
@@ -145,7 +174,7 @@ export default function LeetCodePortfolio() {
                 {s}
               </FilterChip>
             ))}
-          </ScrollRow> 
+          </ScrollRow>
           <div className="flex-1 min-w-0">
             <input
               value={query}
@@ -232,9 +261,7 @@ export default function LeetCodePortfolio() {
           </div>
         )}
       </div>
-    
     </div>
-
   );
 }
 
@@ -295,33 +322,16 @@ function MiniTag({
 
 function ScrollRow({ children }: { children: React.ReactNode }) {
   /*
-    Mobile (default):
-      - Wrap chips (no horizontal scroll, no overflow risk).
-    >= sm:
-      - Single row, horizontal scroll if overflow.
-      - Snap optional (only if desired).
-    Removes trailing blank space & 1px rounding overflow.
+    Simplified (no horizontal scroll):
+    - Pure wrapping flex container.
+    - Removes snap / overflow / extra wrappers.
+    - Chips will flow to multiple lines on all screen sizes.
   */
   return (
-    <div className="w-full">
-      <div
-        className="
-          flex flex-wrap gap-2
-          sm:flex-nowrap
-          sm:overflow-x-auto
-          sm:no-scrollbar
-          sm:snap-x sm:snap-mandatory
-          sm:py-1
-          max-w-full
-        "
-        style={{ WebkitOverflowScrolling: "touch", scrollPaddingLeft: '0.25rem' }}
-      >
-        {React.Children.map(children, (child) => (
-          <div className="sm:flex-shrink-0 sm:snap-start">
-            {child}
-          </div>
-        ))}
-      </div>
+    <div className="flex flex-wrap gap-2">
+      {React.Children.map(children, (child) => (
+        <div>{child}</div>
+      ))}
     </div>
   );
 }

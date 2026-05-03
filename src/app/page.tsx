@@ -890,8 +890,14 @@ export default function FolioGPT() {
   };
 
   return (
-    <div data-theme="dark" className="page-wrapper">
-      {/* Dark mode toggle removed for fixed dark mode */}
+    <div data-theme={darkMode ? 'dark' : 'light'} className="page-wrapper">
+      <button
+        className="dark-toggle"
+        onClick={() => setDarkMode(d => !d)}
+        aria-label="Toggle dark mode"
+      >
+        {darkMode ? <SunIcon /> : <MoonIcon />}
+      </button>
 
       <div className="main-container">
         {/* HOME SECTION */}

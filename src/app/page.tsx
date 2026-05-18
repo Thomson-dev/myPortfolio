@@ -94,11 +94,11 @@ function getBotContent(type: string) {
     case 'hello':
       return 'Hello 👋 I Am Thomson.';
     case 'about':
-      return 'Hello! I\'m Thomson a self-taught & award-winning Full Stack Developer 🖥️ & UI Designer having 10 years of Experiences over 24+ Country Worldwide. I transform ideas into impactful digital experiences, delivering innovative solutions that elevate brands and captivate audiences around the world.';
+      return 'CS Student @ UNILAG · Backend Intern @ FlexiSAF · I craft microservices with Express.js/Spring Boot and mobile apps with Flutter.';
     case 'services':
       return 'Experience innovative tools, smart strategies, and expert support—all designed to scale your business faster, smarter, and more efficiently than ever before.';
     case 'projects':
-      return 'Ready to explore my latest work? I\'ll guide you through each project step by step. Click "Show Next Project" below to continue.';
+      return 'Here\'s what I\'ve been building. Let me walk you through my work.';
     case 'pricing':
       return 'Affordable pricing to kickstart your journey.';
     case 'faqs':
@@ -106,21 +106,21 @@ function getBotContent(type: string) {
     case 'contact':
       return 'Let\'s create something amazing together. I\'m always open to new projects, innovative ideas, and collaboration opportunities.';
     case 'age':
-      return 'Born on July 25, 2000, in Dallas, USA, I am now 25 years old and currently living in Dallas.';
+      return 'I\'m a Computer Science student at UNILAG, currently based in Lagos, Nigeria.';
     case 'resume':
       return 'Explore my complete professional profile. Click the button below to download my Resume in PDF format.';
     case 'education':
-      return 'My educational journey built the knowledge and discipline behind my career. Focused on learning, creativity, and real-world application.';
+      return 'Here\'s my academic background — building the foundation for a career in software engineering.';
     case 'experience':
       return 'Building a strong foundation through continuous learning. A journey of learning, growth, and creative discovery.';
     case 'awards':
-      return 'Dedicated to continuous growth and keeping up with industry standards, I\'m proud to share the awards I\'ve received over the years.';
+      return 'Proud to be a 2× Hackathon Winner — here\'s a look at the recognitions I\'ve earned so far.';
     case 'hobbies':
-      return 'Outside of coding, I stay energized by engaging in activities that keep my mind sharp and my body active:';
+      return 'Outside of code, here\'s what keeps me grounded and growing:';
     case 'skills':
-      return 'These are the tools and technologies I rely on daily to create modern, reliable interfaces with a strong emphasis on performance and quality.';
+      return 'Here\'s my full tech stack — from backend services to mobile apps and DevOps tooling.';
     case 'programming':
-      return 'Strong foundation in modern programming languages and development frameworks. Focused on writing clean, efficient code to build scalable and high-performance applications. 💻🚀';
+      return 'Here\'s my full tech stack — from backend services to mobile apps and DevOps tooling.';
     case 'communication':
       return 'Proficient in multiple languages, enabling effective communication across diverse cultures and environments.';
     case 'home_scroll':
@@ -327,16 +327,16 @@ function BotDetails({ type, projectIndex, onNextProject, onOpenForm, onSend }: B
     case 'about':
       return (
         <>
-          <p className="resp-subtitle">I transform ideas into impactful digital experiences, delivering innovative solutions that elevate brands and captivate audiences around the world.</p>
+          <p className="resp-subtitle">I craft microservices with Express js & Spring Boot and build mobile experiences with Flutter — bridging backend reliability with smooth frontend design.</p>
           <ul className="about-list">
             {[
-              { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>, text: '1500+ Completed Projects' },
-              { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>, text: '1000+ Happy Customers' },
-              { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 11V7a5 5 0 0 1 10 0v4"/><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M12 12v9"/></svg>, text: 'Available for Freelance' },
-              { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>, text: 'hello.aaron' },
-              { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>, text: 'hello@aaronboris.com' },
-              { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12M7 2h1"/><path d="M22 22l-5-5 5-5M11 22l5-5-5-5"/></svg>, text: 'English, French' },
-              { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>, text: 'Based in Dallas, USA' },
+              { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>, text: 'CS Student @ University of Lagos (UNILAG)' },
+              { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>, text: 'Backend Intern @ FlexiSAF' },
+              { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>, text: 'Express js · Spring Boot · Microservices' },
+              { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>, text: 'Flutter · Mobile Development' },
+              { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 11V7a5 5 0 0 1 10 0v4"/><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M12 12v9"/></svg>, text: 'Open to Internships & Collaborations' },
+              { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>, text: '230805075@live.unilag.edu.ng' },
+              { svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>, text: 'Lagos, Nigeria' },
             ].map((item, idx) => (
               <li key={idx}><span className="icon">{item.svg}</span>{item.text}</li>
             ))}
@@ -344,53 +344,46 @@ function BotDetails({ type, projectIndex, onNextProject, onOpenForm, onSend }: B
         </>
       );
 
-    case 'services':
-      return (
-        <>
-          {[
-            { num: 1, title: 'UI/UX Design', desc: 'Crafting intuitive, beautiful interfaces that elevate user experience and drive engagement.', exp: 'Figma · XD · Wireframe' },
-            { num: 2, title: 'Web Design & Development', desc: 'Modern web design and development to elevate your brand and boost online engagement.', exp: 'HTML · CSS · WordPress · Shopify' },
-            { num: 3, title: 'App Development & Support', desc: 'Custom app design and development tailored to your vision—built for performance, usability, and growth.', exp: 'Design · Flutter · Android · iPhone' },
-            { num: 4, title: 'Digital Marketing', desc: 'Boost your brand online with expert digital marketing—SEO, social media, ads & more to grow your business.', exp: 'Post Design · Reels · Posting' },
-          ].map((s) => (
-            <div className="service-box" key={s.num}>
-              <p className="service-title">Service {s.num}: <span>{s.title}</span></p>
-              <p className="service-desc">{s.desc}</p>
-              <p className="expertise-tag">Expertise: {s.exp}</p>
-            </div>
-          ))}
-        </>
-      );
+   
 
     case 'projects': {
       const projects = [
-        { label: 'Video Project', title: 'Video Project', desc: 'A short video showcasing the concept, key features, and the overall user experience in action.', role: 'Lead Developer & Designer', year: '2024', tech: ['React', 'Node.js', 'Tailwind CSS'], liveUrl: '#', githubUrl: '#', icon: '▶', color: '#D4A574' },
-        { label: 'Gallery Project', title: 'Gallery Project', desc: 'An interactive e-commerce website featuring multiple product views functionality.', role: 'Full Stack Developer', year: '2023', tech: ['React', 'Node.js', 'MongoDB'], liveUrl: '#', githubUrl: '#', icon: '🖼', color: '#A8C4E0' },
-        { label: 'Vimeo Project', title: 'Vimeo Project', desc: 'A short video showcasing the concept, key features, and the overall user experience in action.', role: 'UI Designer & Developer', year: '2023', tech: ['Next.js', 'TypeScript', 'Framer Motion'], liveUrl: '#', githubUrl: '#', icon: '▶', color: '#7EB8A4' },
+        { label: 'TraceLens', title: 'TraceLens', desc: 'AI-powered invoice verification platform. Nigerian businesses lose millions yearly to invoice fraud — TraceLens eliminates that gap. Payees submit invoices through a secure portal, three ML models verify in under 15 seconds, and Squad by GTCO releases payment on approval.', role: 'Backend Developer', year: '2025', tech: ['Node.js', 'Python', 'FastAPI', 'MongoDB', 'EfficientNet-B3', 'ResNet50', 'Squad API', 'Cloudinary'], liveUrl: '#', githubUrl: 'https://github.com/ojayballer/TraceLens', videoId: 'trWQzlI1hDk', icon: '🔍', color: '#00AEFF' },
       ];
       const current = projects[projectIndex] || projects[0];
       return (
         <>
-          <p className="project-label">Project : <span>{current.label}</span></p>
-          <div className="project-card">
-            <div className="project-thumb" style={{ background: `linear-gradient(135deg, ${current.color}80, ${current.color})` }}>
-              <div className="thumb-overlay"><div className="play-circle">{current.icon}</div></div>
-            </div>
-            <div className="project-card-body">
-              <div>
-                <p className="project-card-title">{current.title}</p>
-                <p className="project-card-role">{current.role} · {current.year}</p>
-                <p className="project-card-desc">{current.desc}</p>
-                <div className="project-tech-tags">
-                  {current.tech.map((t) => <span key={t} className="project-tech-tag">{t}</span>)}
-                </div>
+          <div className="project-card-v2">
+            {'videoId' in current && current.videoId ? (
+              <div className="project-video-top">
+                <iframe
+                  src={`https://www.youtube.com/embed/${current.videoId}`}
+                  title={current.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              <div className="project-thumb-top" style={{ background: `linear-gradient(135deg, ${current.color}80, ${current.color})` }}>
+                <div className="play-circle">{current.icon}</div>
+              </div>
+            )}
+            <div className="project-card-v2-body">
+              <div className="project-card-v2-header">
+                <p className="project-card-v2-title">{current.title}</p>
+                <span className="project-card-v2-year">{current.year}</span>
+              </div>
+              <p className="project-card-v2-role">{current.role}</p>
+              <p className="project-card-v2-desc">{current.desc}</p>
+              <div className="project-tech-tags">
+                {current.tech.map((t) => <span key={t} className="project-tech-tag">{t}</span>)}
               </div>
               <div className="project-links">
-                <a href={current.liveUrl} className="project-link-btn project-link-live" onClick={(e) => e.preventDefault()}>
+                <a href={current.liveUrl} className="project-link-btn project-link-live" onClick={(e) => current.liveUrl === '#' && e.preventDefault()}>
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                   Live Preview
                 </a>
-                <a href={current.githubUrl} className="project-link-btn project-link-github" onClick={(e) => e.preventDefault()}>
+                <a href={current.githubUrl} className="project-link-btn project-link-github" target="_blank" rel="noopener noreferrer" onClick={(e) => current.githubUrl === '#' && e.preventDefault()}>
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
                   GitHub
                 </a>
@@ -445,13 +438,13 @@ function BotDetails({ type, projectIndex, onNextProject, onOpenForm, onSend }: B
             <span className="contact-icon">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </span>
-            <div><p>Email Me:</p><a href="mailto:hello@aaronboris.com">hello@aaronboris.com</a></div>
+            <div><p>Email Me:</p><a href="mailto:230805075@live.unilag.edu.ng">230805075@live.unilag.edu.ng</a></div>
           </div>
           <div className="contact-info-item">
             <span className="contact-icon">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
             </span>
-            <div><p>Call Me:</p><a href="tel:+17862345678">+1 (786) 234 5678</a></div>
+            <div><p>Location:</p><a href="#">Lagos, Nigeria</a></div>
           </div>
           <div className="social-links">
             <a href="#" className="social-btn" onClick={(e) => e.preventDefault()} aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
@@ -476,16 +469,15 @@ function BotDetails({ type, projectIndex, onNextProject, onOpenForm, onSend }: B
     case 'education':
       return (
         <>
-          {[
-            { period: '2016 – 2018', title: 'Master in Design', desc: 'Pursuing advanced studies in design, focusing on innovation, creativity, and strategic problem-solving.' },
-            { period: '2014 – 2016', title: 'Bachelor in Science', desc: 'Pursuing a strong academic foundation in science while developing analytical, research, and problem-solving skills.' },
-            { period: '2012 – 2014', title: 'Diploma in Computer', desc: 'Completed a Diploma in Computer from Cambridge University. Focused on computer fundamentals, programming, and digital technologies.' },
-          ].map((e) => (
-            <div className="edu-box" key={e.title}>
-              <p className="service-title">{e.period}: <span>{e.title}</span></p>
-              <p className="service-desc">{e.desc}</p>
+          <div className="edu-box">
+            <p className="service-title">Currently Enrolled: <span>B.Sc. Computer Science</span></p>
+            <p className="service-desc">University of Lagos (UNILAG), Lagos, Nigeria</p>
+            <div className="project-tech-tags" style={{ marginTop: 10 }}>
+              {['Systems Analysis & Design', 'Distributed Systems', 'Digital Logic Design', 'Data Structures & Algorithms'].map((c) => (
+                <span key={c} className="project-tech-tag">{c}</span>
+              ))}
             </div>
-          ))}
+          </div>
         </>
       );
 
@@ -509,16 +501,12 @@ function BotDetails({ type, projectIndex, onNextProject, onOpenForm, onSend }: B
       return (
         <>
           {[
-            { status: 'NOMINEE', year: '2026', name: 'The Webby Awards' },
-            { status: 'WINNER', year: '2025', name: 'Awwwards Interior' },
-            { status: 'WINNER', year: '2024', name: 'EWA Design' },
-            { status: 'WINNER', year: '2023', name: 'The BEST Star' },
-            { status: 'NOMINEE', year: '2022', name: 'Web Guru Awards' },
-            { status: 'WINNER', year: '2021', name: 'Best Shots Star' },
+            { status: 'WINNER', year: '2025', name: 'Hackathon' },
+            { status: 'WINNER', year: '2024', name: 'Hackathon' },
           ].map((a) => (
-            <div className="award-row" key={a.name}>
+            <div className="award-row" key={a.name + a.year}>
               <span className="award-badge">[{a.status}]</span>
-              <span className="award-name">{a.year}: <span>{a.name}</span></span>
+              <span className="award-name"><span>{a.name}</span></span>
             </div>
           ))}
         </>
@@ -528,10 +516,10 @@ function BotDetails({ type, projectIndex, onNextProject, onOpenForm, onSend }: B
       return (
         <>
           {[
-            { emoji: '⚽', title: 'Soccer', desc: 'When I have free time, I enjoy playing soccer to stay active and energized.' },
-            { emoji: '🏕️', title: 'Camping', desc: "Camping helps me disconnect from the busy routine and reconnect with nature." },
-            { emoji: '🎮', title: 'Gaming', desc: "Games help me relax, explore strategy, creativity, and fun." },
-            { emoji: '🎵', title: 'Music', desc: "Music helps me relax, recharge, and stay inspired during my free time." },
+            { emoji: '🌿', title: 'Nature Walks', desc: 'I enjoy outdoor spots and nature walks around Lagos — a great way to clear my head after long coding sessions.' },
+            { emoji: '🎯', title: 'Tech Community', desc: 'Active member of SCA UNILAG, helping build a community where students learn, collaborate, and grow together.' },
+            { emoji: '📚', title: 'Reading', desc: 'I love reading about distributed systems and clean architecture — the thinking behind well-built software fascinates me.' },
+            { emoji: '🧩', title: 'DSA / LeetCode', desc: 'Working through the Neetcode 150 to sharpen my problem-solving and stay sharp for technical interviews.' },
           ].map((h) => (
             <div className="hobby-box" key={h.title}>
               <h3><span className="hobby-emoji">{h.emoji}</span> {h.title}</h3>
@@ -543,41 +531,41 @@ function BotDetails({ type, projectIndex, onNextProject, onOpenForm, onSend }: B
 
     case 'skills':
       return (
-        <div className="skill-grid">
+        <>
           {[
-            { num: '01', name: 'Figma', type: 'Design', pct: '96%' },
-            { num: '02', name: 'Sketch', type: 'Design', pct: '87%' },
-            { num: '03', name: 'Photoshop', type: 'Photography', pct: '89%' },
-            { num: '04', name: 'Elementor', type: 'Development', pct: '84%' },
-            { num: '05', name: 'WordPress', type: 'Development', pct: '93%' },
-            { num: '06', name: 'Shopify', type: 'Development', pct: '89%' },
-          ].map((s) => (
-            <div className="skill-card" key={s.name}>
-              <p className="skill-card-number">{s.num}</p>
-              <p className="skill-percent">{s.pct}</p>
-              <p className="skill-name-label">{s.name}</p>
-              <p className="skill-type-label">{s.type}</p>
+            { category: 'Backend', tags: ['Java', 'Spring Boot 3', 'Spring Cloud', 'Spring Security', 'Quarkus', 'REST APIs', 'Microservices', 'RabbitMQ', 'JWT', 'Flyway'] },
+            { category: 'Mobile', tags: ['Flutter', 'Dart', 'GetX', 'Provider', 'Bloc/Cubit'] },
+            { category: 'Databases', tags: ['PostgreSQL', 'MySQL', 'H2'] },
+            { category: 'DevOps & Tools', tags: ['Docker', 'Maven', 'Git', 'GitHub', 'Postman', 'IntelliJ IDEA'] },
+            { category: 'Frontend', tags: ['React', 'Next.js', 'Vite', 'Tailwind CSS'] },
+            { category: 'Other', tags: ['Python (DSA)', 'Node.js', 'OpenFeign', 'Resilience4J', 'Paystack API'] },
+          ].map((group) => (
+            <div className="skill-category" key={group.category}>
+              <p className="skill-category-label">{group.category}</p>
+              <div className="skill-tag-row">
+                {group.tags.map((tag) => <span key={tag} className="skill-tag">{tag}</span>)}
+              </div>
             </div>
           ))}
-        </div>
+        </>
       );
 
     case 'programming':
       return (
         <>
           {[
-            { name: 'JavaScript', pct: 90 },
-            { name: 'PHP', pct: 82 },
-            { name: 'HTML/CSS', pct: 95 },
-            { name: 'Tailwind', pct: 75 },
-            { name: 'Perl', pct: 90 },
-          ].map((s) => (
-            <div className="prog-skill" key={s.name}>
-              <div className="prog-skill-header">
-                <span className="prog-skill-name">{s.name}</span>
-                <span className="prog-skill-pct">[{s.pct}%]</span>
+            { category: 'Backend', tags: ['Java', 'Spring Boot 3', 'Spring Cloud', 'Spring Security', 'Quarkus', 'REST APIs', 'Microservices', 'RabbitMQ', 'JWT', 'Flyway'] },
+            { category: 'Mobile', tags: ['Flutter', 'Dart', 'GetX', 'Provider', 'Bloc/Cubit'] },
+            { category: 'Databases', tags: ['PostgreSQL', 'MySQL', 'H2'] },
+            { category: 'DevOps & Tools', tags: ['Docker', 'Maven', 'Git', 'GitHub', 'Postman', 'IntelliJ IDEA'] },
+            { category: 'Frontend', tags: ['React', 'Next.js', 'Vite', 'Tailwind CSS'] },
+            { category: 'Other', tags: ['Python (DSA)', 'Node.js', 'OpenFeign', 'Resilience4J', 'Paystack API'] },
+          ].map((group) => (
+            <div className="skill-category" key={group.category}>
+              <p className="skill-category-label">{group.category}</p>
+              <div className="skill-tag-row">
+                {group.tags.map((tag) => <span key={tag} className="skill-tag">{tag}</span>)}
               </div>
-              <DotBar percent={s.pct} />
             </div>
           ))}
         </>
@@ -731,10 +719,11 @@ const MENU_ITEMS = [
   { num: '01', label: 'Home', key: 'home' },
   { num: '02', label: 'About', key: 'about' },
   { num: '03', label: 'Projects', key: 'project' },
-  { num: '04', label: 'Contact', key: 'contact' },
+  { num: '04', label: 'Skills', key: 'skills' },
+  { num: '05', label: 'Hobbies', key: 'hobbies' },
+  { num: '06', label: 'Contact', key: 'contact' },
 ];
 
-const TYPING_WORDS = ['UI/UX Designer', 'Full Stack Developer', 'Freelancer', 'Product Designer', 'Creative Director'];
 
 export default function FolioGPT() {
   const [darkMode, setDarkMode] = useState(true);
@@ -745,7 +734,6 @@ export default function FolioGPT() {
   const [showHome, setShowHome] = useState(true);
   const [isTyping, setIsTyping] = useState(false);
   const [placeholderIdx, setPlaceholderIdx] = useState(0);
-  const [typingWordIdx, setTypingWordIdx] = useState(0);
   const [projectIndices, setProjectIndices] = useState<Record<number, number>>({});
 
   const chatRef = useRef<HTMLDivElement>(null);
@@ -760,13 +748,6 @@ export default function FolioGPT() {
     return () => clearInterval(t);
   }, []);
 
-  // Animate typing badge
-  useEffect(() => {
-    const t = setInterval(() => {
-      setTypingWordIdx(i => (i + 1) % TYPING_WORDS.length);
-    }, 2500);
-    return () => clearInterval(t);
-  }, []);
 
   // Auto scroll chat to bottom
   useEffect(() => {
@@ -909,14 +890,11 @@ export default function FolioGPT() {
             {/* Profile */}
             <div className="profile-img-main">
               <img src="/pic.png" alt="Thomson Onyedikachi" className="profile-avatar" />
-              <div className="typing-badge" key={typingWordIdx}>
-                {TYPING_WORDS[typingWordIdx]}
-              </div>
             </div>
 
             <h1 className="profile-name"> Thomson Onyedikachi</h1>
             <p className="sub-text-hero">
-              A Passionate <span className="text-accent font-bold">Full Stack Developer 🖥️</span> &amp; <span className="text-secondary font-bold">Product Designer</span> with 10 years of experience across 24+ countries worldwide.
+              CS Student @ <span className="text-accent font-bold">UNILAG</span> &amp; Backend Intern @ <span className="text-secondary font-bold">FlexiSAF</span> — building microservices with Express.js/Spring Boot and mobile apps with Flutter.
             </p>
             <h2 className="help-text">What can I help you?</h2>
           </section>

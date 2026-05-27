@@ -898,6 +898,20 @@ html, body {
   justify-content: center;
 }
 
+.project-img-top {
+  width: 100%;
+  max-height: 220px;
+  overflow: hidden;
+}
+
+.project-img-top img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
 .project-card-v2-body {
   padding: 18px 20px 20px;
   display: flex;
@@ -1100,6 +1114,77 @@ html, body {
 }
 
 .preview-link:hover { gap: 8px; }
+
+/* ===== PROJECT TABS ===== */
+.proj-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.proj-tab {
+  flex: 1;
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--sub-text);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.proj-tab:hover {
+  border-color: #00AEFF;
+  color: var(--text-color);
+}
+
+.proj-tab.active {
+  background: #00AEFF;
+  border-color: #00AEFF;
+  color: #fff;
+}
+
+.proj-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.proj-nav-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: #00AEFF;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.proj-nav-btn:hover:not(:disabled) {
+  background: #00AEFF;
+  border-color: #00AEFF;
+  color: #fff;
+}
+
+.proj-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.proj-nav-counter {
+  font-size: 12px;
+  color: var(--sub-text);
+  min-width: 40px;
+  text-align: center;
+}
 
 .next-project-btn {
   display: inline-flex;

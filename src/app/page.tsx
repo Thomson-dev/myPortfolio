@@ -320,6 +320,195 @@ function DotBar({ percent }: { percent: number }) {
 }
 
 // ============================================================
+// PROJECTS PANEL — tabbed by category
+// ============================================================
+type Project = {
+  title: string; desc: string; role: string; year: string;
+  tech: string[]; liveUrl: string; githubUrl: string;
+  videoId?: string; image?: string; icon: string; color: string; category: 'web' | 'mobile' | 'devops';
+};
+
+const ALL_PROJECTS: Project[] = [
+  {
+    category: 'web',
+    title: 'TraceLens',
+    desc: 'AI-powered invoice verification platform. Payees submit invoices through a secure portal, three ML models verify in under 15 seconds, and Squad by GTCO releases payment on approval.',
+    role: 'Backend Developer', year: '2025',
+    tech: ['Node.js', 'Python', 'FastAPI', 'MongoDB', 'EfficientNet-B3', 'ResNet50', 'Squad API', 'Cloudinary'],
+    liveUrl: '#', githubUrl: 'https://github.com/ojayballer/TraceLens',
+    videoId: 'trWQzlI1hDk', icon: '🔍', color: '#00AEFF',
+  },
+  {
+    category: 'web',
+    title: 'Blue More Yachting',
+    desc: 'A luxury yacht charter platform featuring destination browsing, yacht type filtering, budget and guest selection — built for exclusive charters across Turkey, Greece, and Croatia.',
+    role: 'Frontend Developer', year: '2025',
+    tech: ['React', 'Next.js', 'Tailwind CSS'],
+    liveUrl: 'https://bluemore-delta.vercel.app/', githubUrl: 'https://github.com/Thomson-dev/BLUEMORE', image: '/project-bluermore.png', icon: '⛵', color: '#0EA5E9',
+  },
+  {
+    category: 'web',
+    title: 'Web Project 3',
+    desc: 'Add your project description here — what problem it solves, key features, and the impact it made.',
+    role: 'Full Stack Developer', year: '2025',
+    tech: ['React', 'Node.js', 'MongoDB'],
+    liveUrl: '#', githubUrl: '#', icon: '💻', color: '#8B5CF6',
+  },
+  {
+    category: 'mobile',
+    title: 'Mobile Project 1',
+    desc: 'Add your project description here — what problem it solves, key features, and the impact it made.',
+    role: 'Mobile Developer', year: '2025',
+    tech: ['Flutter', 'Dart', 'GetX', 'REST API'],
+    liveUrl: '#', githubUrl: '#', icon: '📱', color: '#7C3AED',
+  },
+  {
+    category: 'mobile',
+    title: 'Mobile Project 2',
+    desc: 'Add your project description here — what problem it solves, key features, and the impact it made.',
+    role: 'Mobile Developer', year: '2025',
+    tech: ['Flutter', 'Dart', 'Provider', 'Firebase'],
+    liveUrl: '#', githubUrl: '#', icon: '📲', color: '#6D28D9',
+  },
+  {
+    category: 'mobile',
+    title: 'Mobile Project 3',
+    desc: 'Add your project description here — what problem it solves, key features, and the impact it made.',
+    role: 'Mobile Developer', year: '2025',
+    tech: ['Flutter', 'Dart', 'Bloc/Cubit', 'REST API'],
+    liveUrl: '#', githubUrl: '#', icon: '🛸', color: '#5B21B6',
+  },
+  {
+    category: 'devops',
+    title: 'DevOps Project 1',
+    desc: 'Add your project description here — what problem it solves, key features, and the impact it made.',
+    role: 'Backend / DevOps', year: '2025',
+    tech: ['Docker', 'Spring Boot', 'PostgreSQL', 'GitHub Actions'],
+    liveUrl: '#', githubUrl: '#', icon: '☁️', color: '#059669',
+  },
+  {
+    category: 'devops',
+    title: 'DevOps Project 2',
+    desc: 'Add your project description here — what problem it solves, key features, and the impact it made.',
+    role: 'Backend / DevOps', year: '2025',
+    tech: ['Docker', 'Spring Cloud', 'RabbitMQ', 'CI/CD'],
+    liveUrl: '#', githubUrl: '#', icon: '🔧', color: '#047857',
+  },
+  {
+    category: 'devops',
+    title: 'DevOps Project 3',
+    desc: 'Add your project description here — what problem it solves, key features, and the impact it made.',
+    role: 'Backend / DevOps', year: '2025',
+    tech: ['Kubernetes', 'Spring Boot', 'Flyway', 'Resilience4J'],
+    liveUrl: '#', githubUrl: '#', icon: '⚙️', color: '#065F46',
+  },
+];
+
+const CATEGORY_TABS: { key: Project['category']; label: string }[] = [
+  { key: 'web',    label: 'Web' },
+  { key: 'mobile', label: 'Mobile' },
+  { key: 'devops', label: 'Backend & DevOps' },
+];
+
+function ProjectsPanel({ onSend: _onSend }: { onSend: (t: string) => void }) {
+  const [activeTab, setActiveTab] = useState<Project['category']>('web');
+  const [idx, setIdx] = useState(0);
+
+  const filtered = ALL_PROJECTS.filter(p => p.category === activeTab);
+  const current = filtered[idx] || filtered[0];
+
+  const handleTab = (tab: Project['category']) => {
+    setActiveTab(tab);
+    setIdx(0);
+  };
+
+  return (
+    <>
+      <div className="proj-tabs">
+        {CATEGORY_TABS.map(t => (
+          <button
+            key={t.key}
+            className={`proj-tab${activeTab === t.key ? ' active' : ''}`}
+            onClick={() => handleTab(t.key)}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+
+      {current && (
+        <div className="project-card-v2">
+          {current.videoId ? (
+            <div className="project-video-top">
+              <iframe
+                src={`https://www.youtube.com/embed/${current.videoId}`}
+                title={current.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          ) : current.image ? (
+            <div className="project-img-top">
+              <img src={current.image} alt={current.title} />
+            </div>
+          ) : (
+            <div className="project-thumb-top" style={{ background: `linear-gradient(135deg, ${current.color}80, ${current.color})` }}>
+              <div className="play-circle">{current.icon}</div>
+            </div>
+          )}
+          <div className="project-card-v2-body">
+            <div className="project-card-v2-header">
+              <p className="project-card-v2-title">{current.title}</p>
+              <span className="project-card-v2-year">{current.year}</span>
+            </div>
+            <p className="project-card-v2-role">{current.role}</p>
+            <p className="project-card-v2-desc">{current.desc}</p>
+            <div className="project-tech-tags">
+              {current.tech.map(t => <span key={t} className="project-tech-tag">{t}</span>)}
+            </div>
+            <div className="project-links">
+              <a href={current.liveUrl} className="project-link-btn project-link-live"
+                target={current.liveUrl !== '#' ? '_blank' : undefined}
+                rel="noopener noreferrer"
+                onClick={e => current.liveUrl === '#' && e.preventDefault()}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Preview
+              </a>
+              <a href={current.githubUrl} className="project-link-btn project-link-github"
+                target="_blank" rel="noopener noreferrer"
+                onClick={e => current.githubUrl === '#' && e.preventDefault()}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {filtered.length > 1 && (
+        <div className="proj-nav">
+          <button
+            className="proj-nav-btn"
+            onClick={() => setIdx(i => i - 1)}
+            disabled={idx === 0}
+          >
+            « Prev
+          </button>
+          <span className="proj-nav-counter">{idx + 1} / {filtered.length}</span>
+          <button
+            className="proj-nav-btn"
+            onClick={() => setIdx(i => i + 1)}
+            disabled={idx === filtered.length - 1}
+          >
+            Next »
+          </button>
+        </div>
+      )}
+    </>
+  );
+}
+
+// ============================================================
 // BOT DETAILS — rich content rendered after typewriter finishes
 // ============================================================
 function BotDetails({ type, projectIndex, onNextProject, onOpenForm, onSend }: BotDetailsProps) {
@@ -346,56 +535,8 @@ function BotDetails({ type, projectIndex, onNextProject, onOpenForm, onSend }: B
 
    
 
-    case 'projects': {
-      const projects = [
-        { label: 'TraceLens', title: 'TraceLens', desc: 'AI-powered invoice verification platform. Nigerian businesses lose millions yearly to invoice fraud — TraceLens eliminates that gap. Payees submit invoices through a secure portal, three ML models verify in under 15 seconds, and Squad by GTCO releases payment on approval.', role: 'Backend Developer', year: '2025', tech: ['Node.js', 'Python', 'FastAPI', 'MongoDB', 'EfficientNet-B3', 'ResNet50', 'Squad API', 'Cloudinary'], liveUrl: '#', githubUrl: 'https://github.com/ojayballer/TraceLens', videoId: 'trWQzlI1hDk', icon: '🔍', color: '#00AEFF' },
-      ];
-      const current = projects[projectIndex] || projects[0];
-      return (
-        <>
-          <div className="project-card-v2">
-            {'videoId' in current && current.videoId ? (
-              <div className="project-video-top">
-                <iframe
-                  src={`https://www.youtube.com/embed/${current.videoId}`}
-                  title={current.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            ) : (
-              <div className="project-thumb-top" style={{ background: `linear-gradient(135deg, ${current.color}80, ${current.color})` }}>
-                <div className="play-circle">{current.icon}</div>
-              </div>
-            )}
-            <div className="project-card-v2-body">
-              <div className="project-card-v2-header">
-                <p className="project-card-v2-title">{current.title}</p>
-                <span className="project-card-v2-year">{current.year}</span>
-              </div>
-              <p className="project-card-v2-role">{current.role}</p>
-              <p className="project-card-v2-desc">{current.desc}</p>
-              <div className="project-tech-tags">
-                {current.tech.map((t) => <span key={t} className="project-tech-tag">{t}</span>)}
-              </div>
-              <div className="project-links">
-                <a href={current.liveUrl} className="project-link-btn project-link-live" onClick={(e) => current.liveUrl === '#' && e.preventDefault()}>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  Live Preview
-                </a>
-                <a href={current.githubUrl} className="project-link-btn project-link-github" target="_blank" rel="noopener noreferrer" onClick={(e) => current.githubUrl === '#' && e.preventDefault()}>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                  GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-          {projectIndex < projects.length - 1 && (
-            <button className="next-project-btn" onClick={onNextProject}>Next Project »</button>
-          )}
-        </>
-      );
-    }
+    case 'projects':
+      return <ProjectsPanel onSend={onSend} />;
 
     case 'pricing':
       return (

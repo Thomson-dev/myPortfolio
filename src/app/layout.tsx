@@ -1,12 +1,11 @@
 import React from 'react'
-import { Andika } from 'next/font/google'
+import { Sora } from 'next/font/google'
 import './globals.css'
 
-const andika = Andika({
-  weight: ['400', '700'],
+const sora = Sora({
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
-  display: 
-  'swap',
+  display: 'swap',
 })
 
 export const metadata = {
@@ -16,7 +15,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={andika.className}>
+    <html lang="en" className={sora.className}>
       <body>{children}</body>
     </html>
   )

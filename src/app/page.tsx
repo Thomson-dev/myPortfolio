@@ -325,7 +325,7 @@ function DotBar({ percent }: { percent: number }) {
 type Project = {
   title: string; desc: string; role: string; year: string;
   tech: string[]; liveUrl: string; githubUrl: string;
-  videoId?: string; image?: string; icon: string; color: string; category: 'web' | 'mobile' | 'devops';
+  videoId?: string; portrait?: boolean; image?: string; icon: string; color: string; category: 'web' | 'mobile' | 'devops';
 };
 
 const ALL_PROJECTS: Project[] = [
@@ -356,11 +356,12 @@ const ALL_PROJECTS: Project[] = [
   },
   {
     category: 'mobile',
-    title: 'Mobile Project 1',
-    desc: 'Add your project description here — what problem it solves, key features, and the impact it made.',
+    title: 'Campus Fair',
+    desc: 'Built during UNILAG Hall Week — vendors get a short code (e.g. MK-2091) displayed at their booth, students type it in to save that vendor instantly, then browse their catalog and place orders after the fair. Features in-app chat, order tracking, and Paystack payments — all in a Flutter app backed by Node.js and Firebase.',
     role: 'Mobile Developer', year: '2025',
-    tech: ['Flutter', 'Dart', 'GetX', 'REST API'],
-    liveUrl: '#', githubUrl: '#', icon: '📱', color: '#7C3AED',
+    tech: ['Flutter', 'Dart', 'Node.js', 'Firebase', 'MongoDB', 'Paystack'],
+    liveUrl: '#', githubUrl: 'https://github.com/Thomson-dev/campus-fair',
+    videoId: 'niP4OHlyp5I', portrait: true, icon: '🎪', color: '#7C3AED',
   },
   {
     category: 'mobile',
@@ -389,10 +390,11 @@ const ALL_PROJECTS: Project[] = [
   {
     category: 'devops',
     title: 'Campus Fair',
-    desc: 'A deployed production REST API powering a university trade-fair app, with role-based access control across student, vendor, and organizer roles. Runs the full order lifecycle as a state machine (pending → confirmed → ready → delivered, with cancel and dispute paths) and complete status-history tracking. Payments go through Paystack with a signature-verified webhook that updates orders on charge.success and splits an 8% platform fee from vendor payouts. Added Firebase Cloud Messaging push notifications, Cloudinary image uploads, and a security layer of JWT/Google OAuth, Helmet, CORS, bcrypt, and per-endpoint rate limiting.',
+    desc: 'Built during UNILAG Hall Week — vendors get a short code (e.g. MK-2091) displayed at their booth, students type it in the app to save that vendor instantly, then browse their catalog and place orders after the fair. Full order lifecycle (pending → confirmed → ready → delivered), in-app chat, Paystack payments with signature-verified webhooks, role-based access across students, vendors, and organizers, and an 8% platform fee split on every payout.',
     role: 'Backend Developer', year: '2025',
-    tech: ['Node.js', 'TypeScript', 'Express', 'MongoDB', 'Paystack', 'Firebase', 'Cloudinary'],
-    liveUrl: '#', githubUrl: 'https://github.com/Thomson-dev/campus-fair', icon: '🎪', color: '#047857',
+    tech: ['Flutter', 'Node.js', 'TypeScript', 'MongoDB', 'Firebase', 'Paystack', 'Cloudinary'],
+    liveUrl: '#', githubUrl: 'https://github.com/Thomson-dev/campus-fair',
+    videoId: 'niP4OHlyp5I', portrait: true, icon: '🎪', color: '#047857',
   },
   {
     category: 'devops',
@@ -439,7 +441,7 @@ function ProjectsPanel({ onSend: _onSend }: { onSend: (t: string) => void }) {
       {current && (
         <div className="project-card-v2">
           {current.videoId ? (
-            <div className="project-video-top">
+            <div className={`project-video-top${current.portrait ? ' project-video-top--portrait' : ''}`}>
               <iframe
                 src={`https://www.youtube.com/embed/${current.videoId}`}
                 title={current.title}

@@ -883,6 +883,12 @@ html, body {
   aspect-ratio: 16 / 9;
 }
 
+.project-video-top--portrait {
+  width: 60%;
+  margin: 0 auto;
+  aspect-ratio: 9 / 16;
+}
+
 .project-video-top iframe {
   width: 100%;
   height: 100%;

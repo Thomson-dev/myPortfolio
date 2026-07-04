@@ -360,7 +360,7 @@ const ALL_PROJECTS: Project[] = [
     desc: 'Built during UNILAG Hall Week — vendors get a short code (e.g. MK-2091) displayed at their booth, students type it in to save that vendor instantly, then browse their catalog and place orders after the fair. Features in-app chat, order tracking, and Paystack payments — all in a Flutter app backed by Node.js and Firebase.',
     role: 'Mobile Developer', year: '2025',
     tech: ['Flutter', 'Dart', 'Node.js', 'Firebase', 'MongoDB', 'Paystack'],
-    liveUrl: '#', githubUrl: 'https://github.com/Thomson-dev/campus-fair',
+    liveUrl: 'https://drive.google.com/drive/folders/1jDsMJ3nO742cU0sT4tTHZboGddId6UNG', githubUrl: 'https://github.com/Thomson-dev/campus-fair',
     videoId: 'niP4OHlyp5I', portrait: true, icon: '🎪', color: '#7C3AED',
   },
   {

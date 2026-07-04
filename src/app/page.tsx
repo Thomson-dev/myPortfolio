@@ -365,11 +365,12 @@ const ALL_PROJECTS: Project[] = [
   },
   {
     category: 'mobile',
-    title: 'Mobile Project 2',
-    desc: 'Add your project description here — what problem it solves, key features, and the impact it made.',
+    title: 'FlowBoard',
+    desc: 'A Flutter UI design practice project — exploring smooth layouts, custom components, and clean visual design in Dart. Built to sharpen my mobile UI skills and develop an eye for detail in Flutter.',
     role: 'Mobile Developer', year: '2025',
-    tech: ['Flutter', 'Dart', 'Provider', 'Firebase'],
-    liveUrl: '#', githubUrl: '#', icon: '📲', color: '#6D28D9',
+    tech: ['Flutter', 'Dart'],
+    liveUrl: '#', githubUrl: '#',
+    videoId: 'BcUd1D020f4', portrait: true, icon: '📲', color: '#6D28D9',
   },
   {
     category: 'mobile',

@@ -374,11 +374,12 @@ const ALL_PROJECTS: Project[] = [
   },
   {
     category: 'mobile',
-    title: 'Mobile Project 3',
-    desc: 'Add your project description here — what problem it solves, key features, and the impact it made.',
+    title: 'Tickr',
+    desc: 'A Flutter UI practice project built with Material 3 — exploring the latest Material Design system through clean components, dynamic color, and expressive typography.',
     role: 'Mobile Developer', year: '2025',
-    tech: ['Flutter', 'Dart', 'Bloc/Cubit', 'REST API'],
-    liveUrl: '#', githubUrl: '#', icon: '🛸', color: '#5B21B6',
+    tech: ['Flutter', 'Dart', 'Material 3'],
+    liveUrl: '#', githubUrl: '#',
+    videoId: '1MacAetMzEU', portrait: true, icon: '🛸', color: '#5B21B6',
   },
   {
     category: 'devops',
